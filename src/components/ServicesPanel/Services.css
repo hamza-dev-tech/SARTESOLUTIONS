@@ -78,7 +78,7 @@ d-container{
   }
    
   .os-image {
-    width: 30%;
+    width: 100%;
   }
 }
 @media(max-width:768px){
