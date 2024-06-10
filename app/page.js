@@ -4,7 +4,7 @@ import Navbar from "@/src/components/Navbar/Navbar";
 import "./page.css";
 import Hero from "@/src/components/Hero/Hero";
 import BrandingVideo from "@/src/components/BrandingVideo/BrandingVideo";
-import Services from "@/src/components/ServicesPanel/services";
+import Services from "@/src/components/ServicesPanel/Services";
 import AboutUs from "@/src/components/AboutUs/AboutUs";
 
 import OurDiff from "@/src/components/OurDiff/OurDiff";
