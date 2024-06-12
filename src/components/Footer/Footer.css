@@ -33,6 +33,24 @@
     font-size: 0.9rem;
     cursor: pointer;
 }
+.contact-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .contact-icon {
+    font-size: 1.5rem;
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  .contact-icon:hover {
+    color: #0056b3;
+  }
+  
 
 @media (max-width: 990px){
     .f-menu{

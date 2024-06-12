@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { Link } from "react-scroll";
+import { FaInstagram, FaFacebookF, FaYoutube, FaGithub, FaLinkedinIn, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
           <span className="title">Get in Touch Today!</span>
           <hr />
           <div
-            class="visme_d"
+            className="visme_d"
             data-title="Untitled Project"
             data-url="eprj1egx-untitled-project"
             data-domain="forms"
@@ -34,7 +35,30 @@ const Footer = () => {
             </Link>
           </div>
           <hr />
-
+          <div className="contact-details">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="contact-icon" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF className="contact-icon" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <FaYoutube className="contact-icon" />
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <FaGithub className="contact-icon" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <FaLinkedinIn className="contact-icon" />
+            </a>
+            <a href="tel:+1234567890">
+              <FaPhoneAlt className="contact-icon" />
+            </a>
+            <a href="mailto:info@example.com">
+              <FaEnvelope className="contact-icon" />
+            </a>
+          </div>
+          <hr />
           <span className="text" style={{ fontSize: "0.9rem" }}>
             © SARTE SOLUTIONS. 2024. All Rights Reserved.
           </span>

@@ -13,6 +13,7 @@ import HowItWorks from "@/src/components/HowItWorks/HowItWorks";
 import Testemonials from "@/src/components/Testimonials/Testemonials";
 import Footer from "@/src/components/Footer/Footer";
 import { useEffect } from "react";
+import Projects from "@/src/components/Projects/Projects";
 
 export default function Home() {
   const controls = useAnimation();
@@ -49,6 +50,21 @@ export default function Home() {
 
       <HowItWorks />
 
+      <motion.div
+        onViewportEnter={() =>
+          controls.start({
+            backgroundColor: "var(--third-color)",
+          })
+        }
+        onViewportLeave={() =>
+          controls.start({
+            backgroundColor: "white",
+          })
+        }
+        viewport={{ amount: 0.4 }}
+      >
+        <Projects />
+      </motion.div>
       <motion.div
         onViewportEnter={() =>
           controls.start({

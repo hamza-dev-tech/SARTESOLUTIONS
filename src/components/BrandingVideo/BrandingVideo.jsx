@@ -11,7 +11,7 @@ const BrandingVideo = () => {
     offset: ["start end", "end end"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scale = useTransform(scrollYProgress, [0, 2], [0.6, 2]);
 
   return (
     <div className="bv-container">

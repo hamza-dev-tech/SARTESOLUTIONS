@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Testimonials.css";
 import Slider from "react-slick";
 import { testimonialsData } from "@/src/utils/data";
 import {motion} from "framer-motion"
 import { containerVariants } from "@/src/utils/animation";
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from "@/Firebase";
 const SlickSlider = () => {
+  const [comments, setComments] = useState([]);
     const settings = {
         dots:true,
         infinite:true,
@@ -43,12 +46,23 @@ const SlickSlider = () => {
         ],
     }
 
+    useEffect(() => {
+      const fetchComments = async () => {
+        const projectsCollection = collection(db, 'Testimonials');
+        const projectsSnapshot = await getDocs(projectsCollection);
+        const projectsList = projectsSnapshot.docs.map(doc => doc.data());
+        setComments(projectsList);
+      };
+  
+      fetchComments();
+    }, []);
+
   return (
     <motion.div  variants={containerVariants(0.05)}
     initial="offscreen"
     whileInView={"onscreen"}>
       <Slider {...settings}>
-        {testimonialsData.map((comment, i) => (
+        {comments.map((comment, i) => (
           <div key={i} className="comment">
             <div className="c-content">
               <img
