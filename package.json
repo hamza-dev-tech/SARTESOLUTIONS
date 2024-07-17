@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.4.1",
+    "@prisma/client": "^5.16.2",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.16",
     "firebase": "^10.12.2",
@@ -21,5 +23,8 @@
     "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
     "react-toastify": "^10.0.5"
+  },
+  "devDependencies": {
+    "prisma": "^5.16.2"
   }
 }

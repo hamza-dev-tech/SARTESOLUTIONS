@@ -44,17 +44,27 @@ const Navbar = () => {
           {/* right Side */}
           <div className="n-right">
             <div className="n-menu">
+              <Link to="app" spy={true} smooth={true} offset={100}>
+                <span>Home</span>
+              </Link>
               <Link to="os-wrapper" spy={true} smooth={true} offset={100}>
                 <span>Services</span>
               </Link>
               <Link to="hit-wrapper" spy={true} smooth={true} offset={100}>
-                <span>How it works</span>
-              </Link>
-              <Link to="a-wrapper" spy={true} smooth={true} offset={100}>
                 <span>About</span>
               </Link>
+              <Link to="a-wrapper" spy={true} smooth={true} offset={100}>
+                <span>Our Team</span>
+              </Link>
               <Link to="t-wrapper" spy={true} smooth={true} offset={100}>
-                <span>Testimonials</span>
+                <span>Projects</span>
+              </Link>
+              <Link to="t-wrapper" spy={true} smooth={true} offset={100}>
+                <span>Blog</span>
+              </Link>
+             
+              <Link to="t-wrapper" spy={true} smooth={true} offset={100}>
+                <span>LogIn/SignUp</span>
               </Link>
               <Link to="f-wrapper" spy={true} smooth={true} offset={100}>
                 <div className="JoinBtn">Contact</div>
