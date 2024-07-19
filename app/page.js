@@ -12,21 +12,11 @@ import { motion, useAnimation } from "framer-motion";
 import HowItWorks from "@/src/components/HowItWorks/HowItWorks";
 import Testemonials from "@/src/components/Testimonials/Testemonials";
 import Footer from "@/src/components/Footer/Footer";
-import { useEffect } from "react";
 import Projects from "@/src/components/Projects/Projects";
 
 export default function Home() {
   const controls = useAnimation();
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://static-bundles.visme.co/forms/vismeforms-embed.js";
-    script.async = true;
-    document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
   return (
     <motion.div className="app" animate={controls}>
       <Navbar />

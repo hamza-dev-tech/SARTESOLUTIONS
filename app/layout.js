@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Josefin_Sans } from "next/font/google";
 
+
+
 export const metadata = {
   title: "SARTE SOLUTIONS",
   description: "Created By Hamza, founder of SARTE SOLUTIONS.",
@@ -29,7 +31,14 @@ export default function RootLayout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </head>
-      <body className={Josef.className}>{children}</body>
+      <body className={Josef.className}>
+     
+          
+             
+          {children}
+      
+      
+        </body>
     </html>
   );
 }
