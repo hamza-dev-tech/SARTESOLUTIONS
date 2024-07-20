@@ -6,7 +6,7 @@ import "./Hero.css";
 import EmailBox from "../EmailBox/EmailBox";
 import { HeroData } from "@/src/utils/data";
 import {  motion } from "framer-motion";
-const Hero = () => {
+const Hero = ({title1, title2, des}) => {
   const variants = (delay) => ({
     initial: {
       y: "18rem",
@@ -91,13 +91,15 @@ const Hero = () => {
           {/* right side */}
           <div className="h-right">
             <div className="h-title">
-              <span>Redifine How</span>
-              <span>You Grow Your</span>
-              <span>Digital Business</span>
+              <span>{title1}</span>
+              {title2 && 
+              <span>{title2}</span>
+}
             </div>
             <div className="h-des">
-            At SARTE SOLUTIONS, we specialize in delivering innovative and customized software solutions to drive your business forward. Our team of experts is dedicated to turning your vision into reality. Partner with us to unlock your full potential and achieve unparalleled success.
+           {des}
             </div>
+            <span style={{color: "wheat"}}>Subscribe to our newsletter for the latest updates and insights.</span>
             <EmailBox />
           </div>
         </div>
@@ -105,5 +107,8 @@ const Hero = () => {
     </div>
   );
 };
+
+
+
 
 export default Hero;

@@ -11,6 +11,7 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.4.1",
     "@prisma/client": "^5.16.2",
+    "emailjs-com": "^3.2.0",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.16",
     "firebase": "^10.12.2",

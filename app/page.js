@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <motion.div className="app" animate={controls}>
       <Navbar />
-      <Hero />
+      <Hero title1="Redifine How" title2 ="You Grow" des = "At SARTE SOLUTION, we specialize in delivering innovative and customized software solutions to drive your business forward. Our team of experts is dedicated to turning your vision into reality. Partner with us to unlock your full potential and achieve unparalleled success." />
       <BrandingVideo />
       <Services />
       <motion.div
@@ -68,7 +68,7 @@ export default function Home() {
         }
         viewport={{ amount: 0.4 }}
       >
-        <AboutUs />
+      
       </motion.div>
       <Testemonials />
       <Footer />

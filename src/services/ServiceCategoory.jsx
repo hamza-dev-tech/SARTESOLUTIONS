@@ -45,72 +45,7 @@ export default function ServiceCategory({ title, services, isOdd, vid }) {
     <div className="hit-wrapper">
     <div className="container">
      
-        
-        {/* <motion.span
-              initial="offscreen"
-              whileInView={"onscreen"}
-              variants={titleVaraints}
-              className="title"
-            >
-              {title}
-            </motion.span>
-        <div className="bv-container">
-        <motion.div
-              initial="offscreen"
-              whileInView={"onscreen"}
-              variants={featureVaraints}
-              className="container">
-               
-          
-          <motion.video
-              className="bv-video"
-              controls
-              
-            >
-              <source src={vid} type="video/mp4" />
-            </motion.video>
-          </motion.div>
-        </div>
-        {services.map((service, index) => (
-          <motion.div
-          initial="offscreen"
-          whileInView={"onscreen"}
-          variants={featureVaraints}
-          key={index} className="hit-feature">
-            <motion.div
-            initial={{opacity:0, x:-100}}
-            whileInView={{
-                opacity:1,
-                x:0,
-                transition: {
-                    type:"easeIn",
-                    duration:1,
-                    delay:.7,
-                }
-            }}
-            className="detail">
-            <ServiceIcon>{service.icon}</ServiceIcon>
-            <motion.span
-              initial="offscreen"
-              whileInView={"onscreen"}
-              variants={tagVaraints}
-              className="tag"
-            >
-             {service.name}
-            </motion.span>
-            <motion.span
-              initial="offscreen"
-              whileInView={"onscreen"}
-              variants={tagVaraints}
-              className="text"
-            >
-             {service.description}
-            </motion.span>
-            
-          </motion.div>
-          </motion.div>
-        ))} */}
-
+       
 <div className="hit-container">
           {/* Head */}
           <div className="hit-head">
