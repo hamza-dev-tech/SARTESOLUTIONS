@@ -1,34 +1,41 @@
 "use client";
 
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { RxCross2 } from "react-icons/rx";
 import { BiMenuAltRight } from "react-icons/bi";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { Link } from "react-scroll";
+import { useViewportScroll, motion } from "framer-motion";
+import Link from "next/link";
+
 const Navbar = () => {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
   const [navStyle, setNavStyle] = useState("");
   const [color, setColor] = useState("white");
-  const { scrollYProgress } = useScroll();
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > 0.2) {
-      setNavStyle("sticky");
-      setColor("#00caf9");
-    } else {
-      setNavStyle("");
-      setColor("white");
-    }
-  });
+  const { scrollY } = useViewportScroll();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollY.get() > 200) {
+        setNavStyle("sticky");
+        setColor("#00caf9");
+      } else {
+        setNavStyle("");
+        setColor("white");
+      }
+    };
+
+    handleScroll();
+    return scrollY.onChange(handleScroll);
+  }, [scrollY]);
+
   return (
     <div className={`n-wrapper ${navStyle}`}>
       {/* Desktop Version */}
       <div className="container">
         <div className="n-container">
           {/* Left side */}
-          <Link to="h-wrapper" spy={true} smooth={true} offset={100}>
           <div className="n-logo">
+            <Link style={{ textDecoration: 'none' }} href="/">
             <span
               className="sec-title"
               style={{ fontSize: "1.5rem", fontWeight: "bold", color: color }}
@@ -38,57 +45,39 @@ const Navbar = () => {
             <span className="sec-title" style={{ fontSize: "1.4rem" }}>
               SOLUTIONS
             </span>
+            </Link>
           </div>
-          </Link>
 
-          {/* right Side */}
+          {/* Right Side */}
           <div className="n-right">
             <div className="n-menu">
-              <Link to="app" spy={true} smooth={true} offset={100}>
-                <span>Home</span>
-              </Link>
-              <Link to="os-wrapper" spy={true} smooth={true} offset={100}>
-                <span>Services</span>
-              </Link>
-              <Link to="hit-wrapper" spy={true} smooth={true} offset={100}>
-                <span>About</span>
-              </Link>
-              <Link to="a-wrapper" spy={true} smooth={true} offset={100}>
-                <span>Our Team</span>
-              </Link>
-              <Link to="t-wrapper" spy={true} smooth={true} offset={100}>
-                <span>Projects</span>
-              </Link>
-              <Link to="t-wrapper" spy={true} smooth={true} offset={100}>
-                <span>Blog</span>
-              </Link>
-             
-              <Link to="t-wrapper" spy={true} smooth={true} offset={100}>
-                <span>LogIn/SignUp</span>
-              </Link>
-              <Link to="f-wrapper" spy={true} smooth={true} offset={100}>
-                <div className="JoinBtn">Contact</div>
-              </Link>
+              <a style={{ color: color, textDecoration: 'none' }} href="/"><span>Home</span></a>
+              <a style={{ color: color, textDecoration: 'none' }} href="/services">Services</a>
+              <a style={{ color: color, textDecoration: 'none' }} href="/about">About</a>
+        
+              <a style={{ color: color, textDecoration: 'none' }} href="/projects">Projects</a>
+              <a style={{ color: color, textDecoration: 'none' }} href="/blog">Blog</a>
+              <a className="JoinBtn" href="/contact">Contact</a>
             </div>
           </div>
         </div>
       </div>
-      {/* Mobile/tab version */}
 
+      {/* Mobile/Tablet Version */}
       <div className="nm-container">
-        {/* logo */}
-        <Link  onClick={() => setMobileMenuOpened(false)} to="h-wrapper" spy={true} smooth={true} offset={100}>
-        <div className="n-logo">
-          <span
-            className="sec-title"
-            style={{ fontSize: "1.1rem", fontWeight: "bold", color: "white" }}
-          >
-            SARTE
-          </span>
-          <span className="sec-title" style={{ fontSize: "1rem" }}>
-            SOLUTIONS
-          </span>
-        </div>
+        {/* Logo */}
+        <Link style={{ textDecoration: 'none' }} href="/">
+          <div className="n-logo" onClick={() => setMobileMenuOpened(false)}>
+            <span
+              className="sec-title"
+              style={{ fontSize: "1.1rem", fontWeight: "bold", color: "white" }}
+            >
+              SARTE
+            </span>
+            <span className="sec-title" style={{ fontSize: "1rem" }}>
+              SOLUTIONS
+            </span>
+          </div>
         </Link>
 
         {/* Menu Icon */}
@@ -98,57 +87,30 @@ const Navbar = () => {
           <RxCross2 size={30} onClick={() => setMobileMenuOpened(false)} />
         )}
 
-        {/* mobile menu */}
-
+        {/* Mobile Menu */}
         <div
           className="nm-menu"
-          style={{ transform: mobileMenuOpened && "translateX(0%)" }}
+          style={{ transform: mobileMenuOpened ? "translateX(0%)" : "translateX(-100%)" }}
         >
-          <Link
-            onClick={() => setMobileMenuOpened(false)}
-            to="os-wrapper"
-            spy={true}
-            smooth={true}
-            offset={100}
-          >
-            <span>Services</span>
-          </Link>
-          <Link
-            onClick={() => setMobileMenuOpened(false)}
-            to="hit-wrapper"
-            spy={true}
-            smooth={true}
-            offset={100}
-          >
-            <span>How it works</span>
-          </Link>
-          <Link
-            onClick={() => setMobileMenuOpened(false)}
-            to="a-wrapper"
-            spy={true}
-            smooth={true}
-            offset={100}
-          >
-            <span>About</span>
-          </Link>
-          <Link
-            onClick={() => setMobileMenuOpened(false)}
-            to="t-wrapper"
-            spy={true}
-            smooth={true}
-            offset={100}
-          >
-            <span>Testimonials</span>
-          </Link>
-          <Link
-            onClick={() => setMobileMenuOpened(false)}
-            to="f-wrapper"
-            spy={true}
-            smooth={true}
-            offset={100}
-          >
-            <div className="m-JoinBtn">Contact</div>
-          </Link>
+          <a style={{ color: 'white', textDecoration: 'none' }} href="/" onClick={() => setMobileMenuOpened(false)}>
+            Home
+          </a>
+          <a style={{ color: 'white', textDecoration: 'none' }} href="/services" onClick={() => setMobileMenuOpened(false)}>
+            Services
+          </a>
+          <a style={{ color: 'white', textDecoration: 'none' }} href="/about" onClick={() => setMobileMenuOpened(false)}>
+            About
+          </a>
+          
+          <a style={{ color: 'white', textDecoration: 'none' }} href="/projects" onClick={() => setMobileMenuOpened(false)}>
+            Projects
+          </a>
+          <a style={{ color: 'white', textDecoration: 'none' }} href="/blog" onClick={() => setMobileMenuOpened(false)}>
+            Blog
+          </a>
+          <a style={{ textDecoration: 'none' }} className="m-JoinBtn" href="/contact" onClick={() => setMobileMenuOpened(false)}>
+            Contact
+          </a>
         </div>
       </div>
     </div>

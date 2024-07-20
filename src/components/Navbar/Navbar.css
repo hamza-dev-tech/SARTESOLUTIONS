@@ -11,7 +11,7 @@
     top: 0;
 }
 .n-container{
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     color: white;
     font-size: 1rem;
     display: flex;
@@ -21,7 +21,7 @@
 }
 .sticky .n-container{
     color: var(--title-color);
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 .n-logo{
     font-weight: bold;
@@ -42,9 +42,11 @@
     justify-content: center;
     gap: 2.5rem;
 }
-.n-menu span{
+.n-menu {
     cursor: pointer;
 }
+
+
 .JoinBtn{
     color: var(--dark-bg);
     background-color: var(--third-color);
@@ -53,6 +55,7 @@
     text-transform: capitalize;
     border-radius: 999px;
     cursor: pointer;
+    text-decoration: none;
 }
 .nm-container{
     display: none;

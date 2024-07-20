@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import { Link } from "react-scroll";
+import  Link  from "next/link";
 import { FaInstagram, FaFacebookF, FaYoutube, FaGithub, FaLinkedinIn, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
@@ -9,19 +9,11 @@ const Footer = () => {
       <div className="container">
         <div className="f-container">
           <span className="title">Get in Touch Today!</span>
-          <hr />
-          <div
-            className="visme_d"
-            data-title="Untitled Project"
-            data-url="eprj1egx-untitled-project"
-            data-domain="forms"
-            data-full-page="false"
-            data-min-height="1000px"
-            data-form-id="74724"
-          ></div>
+       
+        
           <hr />
           <div className="f-menu">
-            <Link to="os-wrapper" spy={true} smooth={true} offset={100}>
+            {/* <Link to="os-wrapper" spy={true} smooth={true} offset={100}>
               <span>Services</span>
             </Link>
             <Link to="hit-wrapper" spy={true} smooth={true} offset={100}>
@@ -32,7 +24,7 @@ const Footer = () => {
             </Link>
             <Link to="t-wrapper" spy={true} smooth={true} offset={100}>
               <span>Testimonials</span>
-            </Link>
+            </Link> */}
           </div>
           <hr />
           <div className="contact-details">
