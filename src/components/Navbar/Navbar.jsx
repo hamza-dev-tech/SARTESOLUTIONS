@@ -43,7 +43,7 @@ const Navbar = () => {
               SARTE
             </span>
             <span className="sec-title" style={{ fontSize: "1.4rem" }}>
-              SOLUTIONS
+              SOLUTION
             </span>
             </Link>
           </div>
@@ -54,8 +54,6 @@ const Navbar = () => {
               <a style={{ color: color, textDecoration: 'none' }} href="/"><span>Home</span></a>
               <a style={{ color: color, textDecoration: 'none' }} href="/services">Services</a>
               <a style={{ color: color, textDecoration: 'none' }} href="/about">About</a>
-        
-              <a style={{ color: color, textDecoration: 'none' }} href="/projects">Projects</a>
               <a style={{ color: color, textDecoration: 'none' }} href="/blog">Blog</a>
               <a className="JoinBtn" href="/contact">Contact</a>
             </div>
@@ -75,7 +73,7 @@ const Navbar = () => {
               SARTE
             </span>
             <span className="sec-title" style={{ fontSize: "1rem" }}>
-              SOLUTIONS
+              SOLUTION
             </span>
           </div>
         </Link>
@@ -101,10 +99,7 @@ const Navbar = () => {
           <a style={{ color: 'white', textDecoration: 'none' }} href="/about" onClick={() => setMobileMenuOpened(false)}>
             About
           </a>
-          
-          <a style={{ color: 'white', textDecoration: 'none' }} href="/projects" onClick={() => setMobileMenuOpened(false)}>
-            Projects
-          </a>
+         
           <a style={{ color: 'white', textDecoration: 'none' }} href="/blog" onClick={() => setMobileMenuOpened(false)}>
             Blog
           </a>

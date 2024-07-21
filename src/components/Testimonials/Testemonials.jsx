@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import SlickSlider from "./SlickSlider";
 import "./Testimonials.css";

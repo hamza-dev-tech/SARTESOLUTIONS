@@ -1,6 +1,7 @@
+"use client"
 import React from "react";
 import "./Footer.css";
-import  Link  from "next/link";
+
 import { FaInstagram, FaFacebookF, FaYoutube, FaGithub, FaLinkedinIn, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
@@ -25,6 +26,11 @@ const Footer = () => {
             <Link to="t-wrapper" spy={true} smooth={true} offset={100}>
               <span>Testimonials</span>
             </Link> */}
+             <a style={{ color: "#fff",fontWeight:"bold", textDecoration: 'none' }} href="/"><span>Home</span></a>
+              <a style={{ color: "#fff",fontWeight:"bold", textDecoration: 'none' }} href="/services">Services</a>
+              <a style={{ color: "#fff",fontWeight:"bold", textDecoration: 'none' }} href="/about">About</a>
+              <a style={{ color: "#fff",fontWeight:"bold", textDecoration: 'none' }} href="/blog">Blog</a>
+              <a style={{ color: "#fff",fontWeight:"bold", textDecoration: 'none' }} href="/contact">Contact</a>
           </div>
           <hr />
           <div className="contact-details">
@@ -37,22 +43,18 @@ const Footer = () => {
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
               <FaYoutube className="contact-icon" />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <FaGithub className="contact-icon" />
-            </a>
+            
+          
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
               <FaLinkedinIn className="contact-icon" />
             </a>
-            <a href="tel:+1234567890">
-              <FaPhoneAlt className="contact-icon" />
-            </a>
-            <a href="mailto:info@example.com">
-              <FaEnvelope className="contact-icon" />
-            </a>
+          
+         
+          
           </div>
           <hr />
           <span className="text" style={{ fontSize: "0.9rem" }}>
-            © SARTE SOLUTIONS. 2024. All Rights Reserved.
+            © SARTE SOLUTION. 2024. All Rights Reserved.
           </span>
         </div>
       </div>

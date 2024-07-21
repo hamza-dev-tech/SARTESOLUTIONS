@@ -99,7 +99,9 @@ const Hero = ({title1, title2, des}) => {
             <div className="h-des">
            {des}
             </div>
-            <span style={{color: "wheat"}}>Subscribe to our newsletter for the latest updates and insights.</span>
+            <div className="h-des">
+            <span style={{color:"wheat", textJustify:"auto", fontSize:'1rem'}}>Subscribe to our newsletter for the latest updates and insights.</span>
+            </div>
             <EmailBox />
           </div>
         </div>

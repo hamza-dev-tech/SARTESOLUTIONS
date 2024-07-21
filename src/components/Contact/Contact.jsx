@@ -27,10 +27,10 @@ const Contact = () => {
         <h2 className="title">Contact Us</h2>
         <div className="contact-details">
           <div className="contact-info">
-            <span className='tag'>Our Office</span> <br />
-            <span className='des'>Sarte Solution</span><br />
-            <span className='text'>Email: <a href="mailto:info@sarte.com">info@sartesolution.com</a></span><br />
-            <span className='text'>Phone: <a href="tel:+923038661499">(+92) 303-8661499</a></span><br />
+            <span className='tag'>Our Office</span> <br /><br />
+            <span className='des'>Sarte Solution</span><br /><br />
+            <span className='text'>Email: <a href="mailto:info@sarte.com">info@sartesolution.com</a></span><br /><br />
+            <span className='text'>Phone: <a href="tel:+923038661499">(+92) 303-8661499</a></span><br /><br />
 
             <div className="social-icons">
               <a href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
