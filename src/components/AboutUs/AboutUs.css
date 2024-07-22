@@ -50,8 +50,8 @@
     border-radius: 2rem;
     padding: 2rem 2rem;
     width: max-content;
-    margin-bottom: 4rem;
-    margin-top: 4rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 .hit-feature .detail{
     display: flex;
@@ -151,7 +151,6 @@
         flex-direction: column;
         gap: 1rem;
         align-items: flex-start;
-        translate: 0rem 0rem;
     }
 
     .a-features {

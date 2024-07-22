@@ -1,16 +1,32 @@
 import Navbar from '@/src/components/Navbar/Navbar'
 import React from 'react'
-import "./page.css"
+
+import "./Page.css"
+
 import Footer from '@/src/components/Footer/Footer'
+import Featured from '@/src/components/Blog/featured/Featured'
+import CategoryList from '@/src/components/Blog/categoryList/CategoryList'
+import CardList from '@/src/components/Blog/cardList/CardList'
+import Menu from '@/src/components/Blog/Menu/Menu'
+import NavBar from '@/src/components/Blog/navbar/NavBar'
 
-const Blogs = () => {
-  return (
-    <div className='app'>
+const Blogs = ({ searchParams }) => {
+    const page = parseInt(searchParams.page) || 1;
+  
+    return (
+      <div className="app">
         <Navbar />
-
+        <NavBar />
+        <Featured />
+        <CategoryList />
+        <div className="content">
+          <CardList page={page}/>
+          <Menu />
+        </div>
         <Footer />
-    </div>
-  )
+      </div>
+    );
+ 
 }
 
 export default Blogs

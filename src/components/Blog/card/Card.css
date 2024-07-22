@@ -1,0 +1,70 @@
+.post {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center; 
+    gap: 50px;
+  }
+  
+  .cardimageContainer {
+    flex: 1;
+    height: 350px;
+    position: relative;
+  }
+  .cardDetail{
+    display: flex;
+    gap: 5px;
+  }
+  
+  .cardimage {
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+  
+  .cardTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex: 1;
+    text-align: justify;
+  }
+  
+  .carddate {
+    color: gray;
+    font-weight: 500;
+  }
+  .dash{
+    color: gray;
+    font-weight: 500;
+  }
+  
+  .cardcategory {
+    color: crimson;
+    font-weight: 500;
+  }
+  
+  .carddesc {
+    font-size: 18px;
+    font-weight: 300;
+    color: gray;
+  }
+  .cardTitle{
+    font-size: 22px;
+    font: bold;
+  }
+  
+  
+  .cardlink {
+    border-bottom: 1px solid crimson;
+    width: max-content;
+    padding: 2px 0px;
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .cardimageContainer {
+      display: none;
+    }
+    .post{
+        padding: 1rem;
+    }
+  }
+  

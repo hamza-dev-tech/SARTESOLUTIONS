@@ -1,0 +1,39 @@
+.menu-wrapper{
+    padding-top: 5rem;
+    display: inline;
+    flex: 2;
+  }
+  .menu-container{
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
+    align-self: flex-start;
+  }
+  .menu{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+  .stitle2 {
+    color: gray;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .title {
+    font-size: 28px;
+    margin: 0px;
+  }
+
+
+  @media screen and (max-width: 1280px) {
+    .menu{
+        padding: 1rem;
+    }
+  }
+  
+  
+ 

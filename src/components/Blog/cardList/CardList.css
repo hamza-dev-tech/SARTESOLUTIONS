@@ -1,0 +1,21 @@
+.card-wrapper{
+    padding-top: 5rem;
+    display: inline;
+    flex: 7;
+  }
+  .card-container{
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  .card{
+    flex: 6;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.title{
+    margin: 50px 0px;
+  }
