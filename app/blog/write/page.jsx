@@ -224,7 +224,7 @@ const WritePage = () => {
       />
       <label htmlFor="thumbnail" className={styles.thumbnailButton}>
         {thumbnail ? (
-          <img src={thumbnail} alt="Thumbnail" className={styles.thumbnail} />
+          <Image width={100} height={100} src={thumbnail} alt="Thumbnail" className={styles.thumbnail} />
         ) : (
           "Upload Thumbnail (Square)"
         )}
