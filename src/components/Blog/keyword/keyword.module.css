@@ -1,0 +1,94 @@
+.comments {
+    margin-top: 50px;
+    padding: 20px; /* Add padding for spacing */
+    background-color: #f9f9f9; /* Light background color for better contrast */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  .keywordContainer {
+    margin: 30px 0;
+    width: 70%;
+  }
+  
+  .keywordInput {
+    padding: 10px;
+    width: calc(100% - 80px);
+    margin-right: 10px;
+    width: 90%;
+    border: 1px solid #1a8917;
+    border-radius: 10px;
+  }
+  
+  .addKeywordButton {
+    padding: 10px 20px;
+    display: none;
+  }
+  
+  .keywordList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .keyword {
+    padding: 5px 10px;
+    background-color: #1b89170e;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .removeKeyword {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .comment {
+    margin-bottom: 20px; /* Spacing between keywords */
+  }
+  
+  .desc {
+    font-family: 'Arial', sans-serif; /* Clean and modern font */
+    font-size: 1.125rem; /* Base font size for keywords */
+    font-weight: 500; /* Medium weight for emphasis */
+    color: #333; /* Dark color for readability */
+    background-color: #fff; /* White background for keywords */
+    padding: 10px 15px; /* Padding inside each keyword */
+    border-radius: 5px; /* Rounded corners for each keyword */
+    border: 1px solid #ddd; /* Light border for definition */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Light shadow for keywords */
+    display: inline-block; /* Ensure keywords are inline and fit well */
+    margin-right: 10px; /* Spacing between keywords */
+    margin-bottom: 10px; /* Spacing below keywords */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .desc:hover {
+    background-color: #007bff; /* Change background on hover */
+    color: #fff; /* Change text color on hover */
+  }
+  
+  /* Responsive Styling */
+  
+  /* Medium Screens */
+  @media screen and (max-width: 1024px) {
+    .desc {
+      font-size: 1rem; /* Slightly smaller font size */
+      padding: 8px 12px; /* Adjust padding */
+    }
+  }
+  
+  /* Small Screens */
+  @media screen and (max-width: 640px) {
+    .comments {
+      padding: 15px; /* Reduced padding */
+    }
+  
+    .desc {
+      font-size: 0.875rem; /* Smaller font size for mobile */
+      padding: 6px 10px; /* Adjust padding */
+      margin-right: 5px; /* Reduced margin between keywords */
+    }
+  }
+  

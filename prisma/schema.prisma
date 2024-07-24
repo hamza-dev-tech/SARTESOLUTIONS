@@ -80,6 +80,7 @@ model Post {
   comments  Comment[]
   keywords  Keyword[] 
   featured  Boolean   @default(false)
+  discription String
 }
 
 model Comment {

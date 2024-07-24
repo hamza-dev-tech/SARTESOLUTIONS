@@ -1,5 +1,6 @@
 "use client";
-import styles from "../comments/comments.module.css";
+
+import styles from "./keyword.module.css";
 import React, { useState, useEffect } from "react";
 import useSWR from "swr";
 
@@ -22,7 +23,6 @@ const Keyword = ({ postSlug }) => {
   );
 
   useEffect(() => {
-    console.log(data);
   }, [data]);
 
   const [desc, setDesc] = useState("");
@@ -31,15 +31,18 @@ const Keyword = ({ postSlug }) => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className={styles.comments}>
+    <>
+      <span style={{textAlign:"flex-start",color:'gray', fontSize:'1.8rem', marginBottom:'2rem'}} className="title">Keywords</span>
+    <div className={styles.keywordList}>
       {Array.isArray(data?.keywords)
         ? data.keywords.map((item) => (
-            <div className={styles.comment} key={item.id}>
-              <p className={styles.desc}>{item.keyword}</p>
+            <div className={styles.keyword} key={item.id}>
+              {item.keyword}
             </div>
           ))
         : "No keywords found"}
     </div>
+    </>
   );
 };
 

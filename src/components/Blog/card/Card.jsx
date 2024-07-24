@@ -2,11 +2,17 @@ import React from "react";
 import styles from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { FaEye } from "react-icons/fa"; // Import the eye icon from react-icons
+import { FaEye } from "react-icons/fa";
+import { htmlToText } from 'html-to-text';
 
-const Card = ({ key, item }) => {
+const Card = ({ item }) => {
+  // Convert HTML to plain text and limit the description length
+  const description = htmlToText(item.desc, {
+    wordwrap: 130
+  }).substring(0, 250);
+
   return (
-    <div className={styles.post} key={key}>
+    <div className={styles.post} key={item.slug}>
       <div className={styles.cardimageContainer}>
         <Image src={item.img} alt="" fill className={styles.cardimage} />
       </div>
@@ -23,11 +29,7 @@ const Card = ({ key, item }) => {
         <Link href={`/blog/posts/${item.slug}`}>
           <h1 className={styles.title}>{item.title}</h1>
         </Link>
-        <div
-          className="postDesc"
-          dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 250) }}
-        />
-
+        <p className={styles.postDes}>{description}</p>
         <Link className={styles.cardlink} href={`/blog/posts/${item.slug}`}>
           Read More
         </Link>
