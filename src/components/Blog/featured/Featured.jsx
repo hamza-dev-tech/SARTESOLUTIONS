@@ -34,7 +34,7 @@ const Featured = () => {
 
   // Convert HTML to plain text and limit the description length
   const description = featuredPosts.desc 
-    ? htmlToText(featuredPosts.desc, { wordwrap: 130 }).substring(0, 200)
+    ? htmlToText(featuredPosts.desc, { wordwrap: 130 }).substring(0, 500)
     : "";
 
   return (

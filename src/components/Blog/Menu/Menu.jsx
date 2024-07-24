@@ -6,6 +6,7 @@ import MenuCategories from "../menuCategories/MenuCategories";
 
 const Menu = () => {
   const [popularPosts, setPopularPosts] = useState([]);
+  const [pickedPosts, setPickedPosts] = useState([]);
 
   useEffect(() => {
     // Fetch top 4 popular posts based on views
@@ -22,6 +23,22 @@ const Menu = () => {
     fetchPopularPosts();
   }, []);
 
+
+  useEffect(() => {
+    // Fetch top 4 popular posts based on views
+    const fetchPickedPosts = async () => {
+      try {
+        const response = await fetch("/api/posts/picked"); // Update this URL to match your backend endpoint
+        const data = await response.json();
+        setPickedPosts(data.posts);
+      } catch (error) {
+        console.error("Error fetching popular posts:", error);
+      }
+    };
+
+    fetchPickedPosts();
+  }, []);
+
   return (
     <div className="menu-wrapper">
       <div className="menu-container">
@@ -34,7 +51,7 @@ const Menu = () => {
           <MenuCategories />
           <h2 style={{fontSize:"1.2rem"}}  className="subtitle">Chosen by the editor</h2>
           <h1 style={{fontSize:"2rem", lineHeight:'0rem'}}  className="title">Editors Pick</h1>
-          <MenuPosts posts={popularPosts} withImage={true} />
+          <MenuPosts posts={pickedPosts} withImage={true} />
         </div>
       </div>
     </div>

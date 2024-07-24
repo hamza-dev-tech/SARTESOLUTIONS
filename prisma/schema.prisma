@@ -78,9 +78,9 @@ model Post {
   userEmail String
   user      User      @relation(fields: [userEmail], references: [email])
   comments  Comment[]
-  keywords  Keyword[] 
+  keywords  Keyword[]
   featured  Boolean   @default(false)
-  discription String
+  picked    Boolean   @default(false)
 }
 
 model Comment {
@@ -92,10 +92,10 @@ model Comment {
   postSlug  String
   post      Post     @relation(fields: [postSlug], references: [slug])
 }
-model Keyword {
-  id        String   @id @default(cuid()) @map("_id")
-  keyword      String
-  postSlug  String
-  post      Post     @relation(fields: [postSlug], references: [slug])
-}
 
+model Keyword {
+  id       String @id @default(cuid()) @map("_id")
+  keyword  String
+  postSlug String
+  post     Post   @relation(fields: [postSlug], references: [slug])
+}

@@ -22,8 +22,7 @@ const Keyword = ({ postSlug }) => {
     fetcher
   );
 
-  useEffect(() => {
-  }, [data]);
+  useEffect(() => {}, [data]);
 
   const [desc, setDesc] = useState("");
 
@@ -32,16 +31,26 @@ const Keyword = ({ postSlug }) => {
 
   return (
     <>
-      <span style={{textAlign:"flex-start",color:'gray', fontSize:'1.8rem', marginBottom:'2rem'}} className="title">Keywords</span>
-    <div className={styles.keywordList}>
-      {Array.isArray(data?.keywords)
-        ? data.keywords.map((item) => (
-            <div className={styles.keyword} key={item.id}>
-              {item.keyword}
-            </div>
-          ))
-        : "No keywords found"}
-    </div>
+      <span
+        style={{
+          textAlign: "flex-start",
+          color: "gray",
+          fontSize: "1.8rem",
+          marginBottom: "2rem",
+        }}
+        className="title"
+      >
+        Keywords
+      </span>
+      <div className={styles.keywordList}>
+        {Array.isArray(data?.keywords)
+          ? data.keywords.map((item, index) => (
+              <div className={styles.keyword} key={index}>
+                {item.keyword}
+              </div>
+            ))
+          : "No keywords found"}
+      </div>
     </>
   );
 };

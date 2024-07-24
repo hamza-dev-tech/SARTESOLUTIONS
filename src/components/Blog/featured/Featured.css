@@ -43,16 +43,21 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%; /* Ensure it takes full width available */
   }
   
+  
   .postTitle {
-    font-size: 40px;
+    font-size: 2rem;
+    line-height: 2.5rem; /* Adjust line-height for better spacing */
   }
   
   .postDesc {
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 300;
-    color: var(--softTextColor);
+    color: var(--text-color);
+    line-height: 1.5rem;
+    max-width: 100%; /* Ensure it doesn't exceed container width */
   }
   
   .button {
@@ -61,28 +66,40 @@
     border-radius: 5px;
     width: max-content;
   }
+  .postTitle,
+.postDesc {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
   
-  @media screen and (max-width: 1280px) {
-    .title {
-      font-size: 72px;
-    }
+@media screen and (max-width: 1280px) {
+  .postTitle {
+    font-size: 72px;
   }
-  
-  @media screen and (max-width: 1024px) {
-    .title {
-      font-size: 64px;
-    }
-  
-    .imgContainer {
-      display: none;
-    }
+}
+
+@media screen and (max-width: 1024px) {
+  .postTitle  {
+    font-size: 64px;
   }
-  
-  @media screen and (max-width: 768px) {
-    .title {
-      font-size: 48px;
-    }
+
+  .imgContainer {
+    display: none;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .postTitle  {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .postTitle  {
+    font-size: 36px;
+  }
+}
+
   
   @media screen and (max-width: 640px) {
     .title {

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { RxCross2 } from "react-icons/rx";
 import { BiMenuAltRight } from "react-icons/bi";
-import { useViewportScroll, motion } from "framer-motion";
+import { useScroll } from "framer-motion";
 import Link from "next/link";
 import AuthLinks from "../Blog/authLinks/AuthLinks";
 
@@ -12,7 +12,7 @@ const Navbar = () => {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
   const [navStyle, setNavStyle] = useState("");
   const [color, setColor] = useState("white");
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
 
   useEffect(() => {
     const handleScroll = () => {

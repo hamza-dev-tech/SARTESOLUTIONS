@@ -5,14 +5,14 @@ import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 import { htmlToText } from 'html-to-text';
 
-const Card = ({ item }) => {
+const Card = ({ item, key }) => {
   // Convert HTML to plain text and limit the description length
   const description = htmlToText(item.desc, {
     wordwrap: 130
   }).substring(0, 250);
 
   return (
-    <div className={styles.post} key={item.slug}>
+    <div className={styles.post} key={key}>
       <div className={styles.cardimageContainer}>
         <Image src={item.img} alt="" fill className={styles.cardimage} />
       </div>

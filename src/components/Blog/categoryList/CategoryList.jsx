@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import "./CategoryList.css";
 
@@ -20,42 +18,36 @@ const getData = async () => {
 // eslint-disable-next-line @next/next/no-async-client-component
 const CategoryList = async () => {
   const data = await getData();
- 
+
   return (
     <div className="cat-wrapper">
       <div className="container">
         <div className="cat-container">
           <div className="cat-head">
-            <span
-              initial="offscreen"
-              whileInView={"onscreen"}
-              className="title"
-            >
-              Popular Categories
-            </span>
+            <span className="title">Popular Categories</span>
           </div>
 
-          <div
-            initial="offscreen"
-            whileInView={"onscreen"}
-            className="categories"
-          >
-             {data?.map((item) => (
-            <Link href={`/blog/categories?cat=${item.slug}`} className={`category ${item.slug}`} key={item._id}>
-               {item.img && (
-              <Image
-                src={item.img}
-                alt=""
-                width={32}
-                height={32}
-                className="image"
-              />
-            )}
-               <span className="des" style={{fontSize:"1rem"}}>{item.title}</span>
-               </Link>
-        ))}
-            
-
+          <div className="categories">
+            {data.map((item,index) => (
+              <Link
+                href={`/blog/categories?cat=${item.slug}`}
+                className={`category ${item.slug}`}
+                key={index}
+              >
+                {item.img && (
+                  <Image
+                    src={item.img}
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="image"
+                  />
+                )}
+                <span className="des" style={{ fontSize: "1rem" }}>
+                  {item.title}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
