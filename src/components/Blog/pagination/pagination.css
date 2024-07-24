@@ -1,9 +1,9 @@
-.container {
+.pag-container {
     display: flex;
     justify-content: space-between;
   }
   
-  .button {
+  .pag-button {
     width: 100px;
     border: none;
     padding: 16px;
@@ -12,7 +12,7 @@
     cursor: pointer;
   }
   
-  .button:disabled{
+  .pag-button:disabled{
     background-color: rgba(220, 20, 60, 0.473);
     cursor: not-allowed;
   }

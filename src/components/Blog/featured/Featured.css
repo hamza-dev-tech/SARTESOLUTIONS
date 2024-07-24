@@ -87,7 +87,14 @@
     display: none;
   }
 }
-
+.read-button{
+  width: 100px;
+  border: none;
+  padding: 16px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+}
 @media screen and (max-width: 768px) {
   .postTitle  {
     font-size: 48px;

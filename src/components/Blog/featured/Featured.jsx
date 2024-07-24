@@ -73,7 +73,7 @@ const Featured = () => {
               <div className="textContainer">
                 <h1 className="postTitle">{featuredPosts.title}</h1>
                 <div className="postDesc">{description}</div>
-                <button className="button" style={{ cursor: 'pointer' }} onClick={handleReadMore}>
+                <button className="read-button" style={{ cursor: 'pointer' }} onClick={handleReadMore}>
                   Read More
                 </button>
               </div>
