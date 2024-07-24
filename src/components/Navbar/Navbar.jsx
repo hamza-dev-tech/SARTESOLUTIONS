@@ -6,6 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import { BiMenuAltRight } from "react-icons/bi";
 import { useViewportScroll, motion } from "framer-motion";
 import Link from "next/link";
+import AuthLinks from "../Blog/authLinks/AuthLinks";
 
 const Navbar = () => {
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
@@ -55,7 +56,9 @@ const Navbar = () => {
               <a style={{ color: color, textDecoration: 'none' }} href="/services">Services</a>
               <a style={{ color: color, textDecoration: 'none' }} href="/about">About</a>
               <a style={{ color: color, textDecoration: 'none' }} href="/blog">Blog</a>
+              <AuthLinks color={color} />
               <a className="JoinBtn" href="/contact">Contact</a>
+
             </div>
           </div>
         </div>
@@ -103,6 +106,7 @@ const Navbar = () => {
           <a style={{ color: 'white', textDecoration: 'none' }} href="/blog" onClick={() => setMobileMenuOpened(false)}>
             Blog
           </a>
+          <AuthLinks />
           <a style={{ textDecoration: 'none' }} className="m-JoinBtn" href="/contact" onClick={() => setMobileMenuOpened(false)}>
             Contact
           </a>

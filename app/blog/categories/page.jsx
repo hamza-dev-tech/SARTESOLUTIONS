@@ -4,7 +4,8 @@ import "./singleCateg.css";
 import Menu from "@/src/components/Blog/Menu/Menu";
 import "./Page.css"
 import Navbar from "@/src/components/Navbar/Navbar";
-import NavBar from "@/src/components/Blog/navbar/NavBar";
+
+import Footer from "@/src/components/Footer/Footer";
 
 
 const BlogPage = ({ searchParams }) => {
@@ -14,11 +15,12 @@ const BlogPage = ({ searchParams }) => {
   return (
     <div className="app">
       <Navbar />
-      <NavBar />
+      <h1 className="title" style={{textAlign:"center", marginTop:'3rem'}}>{cat}  Blog</h1>
       <div className="content">
         <CardList page={page} cat={cat}/>
         <Menu />
       </div>
+      <Footer />
     </div>
   );
 };

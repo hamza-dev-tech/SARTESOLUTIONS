@@ -1,0 +1,144 @@
+.container {
+  margin-top: 50px;
+  width: 100%; /* Add width to contain the content properly */
+  max-width: 1200px; /* Set a max-width for large screens */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10rem;
+  margin-bottom: 5rem;
+
+}
+
+.title {
+  color: var(--softTextColor);
+  margin-bottom: 30px;
+  font-size: 2rem; /* Base font size */
+}
+
+/* Responsive styling for comment input and button */
+.write {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Reduced gap for smaller screens */
+}
+
+.input {
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  font-size: 1rem; /* Base font size */
+}
+
+.button {
+  padding: 12px 16px;
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* Base font size */
+}
+
+/* Comments container styling */
+.comments {
+  margin-top: 50px;
+}
+
+.comment {
+  margin-bottom: 50px;
+  padding: 10px; /* Added padding for better spacing */
+  border-bottom: 1px solid #ddd; /* Optional border for separation */
+}
+
+/* User styling */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adjusted gap for smaller screens */
+  margin-bottom: 15px; /* Reduced margin for smaller screens */
+}
+
+/* Profile image styling */
+.image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* User information styling */
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--softTextColor);
+}
+
+/* Username and date styling */
+.username {
+  font-weight: 500;
+  font-size: 1.1rem; /* Adjust font size for better readability */
+}
+
+.date {
+  font-size: 0.875rem; /* Adjusted font size */
+}
+
+/* Comment description styling */
+.desc {
+  font-size: 1rem; /* Base font size for description */
+  font-weight: 300;
+  line-height: 1.6; /* Improved line height for readability */
+}
+
+/* Responsive Media Queries */
+
+/* Large screens */
+@media screen and (min-width: 1024px) {
+  .input {
+    font-size: 1.125rem; /* Slightly larger font size */
+  }
+  
+  .button {
+    font-size: 1.125rem; /* Slightly larger font size */
+  }
+}
+
+/* Medium screens */
+@media screen and (max-width: 1024px) {
+  .input {
+    font-size: 1rem; /* Base font size */
+  }
+  
+  .button {
+    font-size: 1rem; /* Base font size */
+  }
+}
+
+/* Small screens */
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 1.5rem; /* Smaller title font size */
+  }
+
+  .write {
+    flex-direction: column;
+  }
+
+  .input {
+    padding: 12px;
+    font-size: 0.875rem; /* Smaller font size */
+  }
+
+  .button {
+    padding: 10px 14px;
+    font-size: 0.875rem; /* Smaller font size */
+  }
+
+  .comment {
+    margin-bottom: 30px; /* Reduced margin */
+  }
+
+  .user {
+    gap: 10px; /* Smaller gap for mobile */
+  }
+}

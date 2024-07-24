@@ -1,46 +1,38 @@
 import React from "react";
-import "./Card.css";
+import styles from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { FaEye } from "react-icons/fa"; // Import the eye icon from react-icons
 
-const Card = () => {
-    
-        const featureVaraints = {
-          offscreen: {
-            scale: 0.5,
-          },
-          onscreen: {
-            scale: 1,
-            transition: {
-              type: "spring",
-              duration: 1.5,
-            },
-          },
-        };
+const Card = ({ key, item }) => {
   return (
-    <motion.div
-    initial="offscreen"
-    whileInView={"onscreen"}
-    variants={featureVaraints} className="post">
-      <div className="cardimageContainer">
-        <Image src="/pic1.jpg" alt="" fill className="cardimage"/>
+    <div className={styles.post} key={key}>
+      <div className={styles.cardimageContainer}>
+        <Image src={item.img} alt="" fill className={styles.cardimage} />
       </div>
-      <div className="cardTextContainer">
-        <div className="cardDetail">
-            <span className="date">11.2.2023</span>
-            <span className="dash">-</span>
-            <span className="cardcategory">CULTURE</span>
+      <div className={styles.cardTextContainer}>
+        <div className={styles.cardDetail}>
+          <span className={styles.date}>
+            {item.createdAt.substring(0, 10)} -{" "}
+          </span>
+          <span className={styles.cardcategory}>{item.catSlug}</span>
+          <span className={styles.views}>
+            <FaEye className={styles.eyeIcon} /> {item.views}
+          </span>
         </div>
-        < Link href="/">
-        <h1 className="cardTitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, voluptate?</h1></Link>
-        <p className="carddesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium praesentium officia amet assumenda eum illo obcaecati corporis! Sequi iste laborum magni iusto nisi eligendi similique, </p>
+        <Link href={`/blog/posts/${item.slug}`}>
+          <h1 className={styles.title}>{item.title}</h1>
+        </Link>
+        <div
+          className="postDesc"
+          dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 250) }}
+        />
 
-        <Link className="cardlink" href="/">Read More</Link>
-
+        <Link className={styles.cardlink} href={`/blog/posts/${item.slug}`}>
+          Read More
+        </Link>
       </div>
-
-    </motion.div>
+    </div>
   );
 };
 

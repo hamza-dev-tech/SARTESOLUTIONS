@@ -38,6 +38,17 @@
   color: white;
   width: max-content;
 }
+.views {
+
+  color: #333;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+.eyeIcon {
+
+  margin-right: 5px;
+}
 
 .category.travel {
   background-color: #ff7857;
@@ -63,11 +74,7 @@
   background-color: #789cff;
 }
 
-.postTitle {
-  font-size: 18px;
-  font-weight: 500;
-  
-}
+
 
 .detail {
   font-size: 12px;
@@ -75,4 +82,33 @@
 
 .date {
   color: gray;
+}
+.postTitle{
+  font-size: 0.9rem;
+  color: #867eb5;
+  font-weight: bold;
+  line-height: 1.5rem;
+  text-transform: capitalize;
+}
+
+
+@media (max-width: 768px) {
+  .title{
+      font-size: 2.2rem;
+  }
+  .sec-title{
+      font-size: 1.8rem;
+  }
+  .des{
+      font-size: 1.2rem;
+  }
+}
+@media (max-width: 640px) {
+  .title{
+      font-size: 1.8rem;
+  }
+  .sec-title{
+      font-size: 1.6rem;
+  }
+ 
 }

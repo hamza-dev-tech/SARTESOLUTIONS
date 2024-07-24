@@ -6,6 +6,7 @@
     flex-direction: column; 
     gap: 1rem;
     justify-content: space-between;
+    margin-top: 10rem;
   }
   .featured-head{
     display: flex;

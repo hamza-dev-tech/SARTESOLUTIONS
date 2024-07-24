@@ -1,50 +1,80 @@
-"use client"
-import React from 'react'
-import "./Featured.css"
+"use client";
+import React, { useEffect, useState } from "react";
+import "./Featured.css";
 import { motion } from "framer-motion";
 import { tagVaraints, titleVaraints } from "@/src/utils/animation";
-import Image from 'next/image';
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 const Featured = () => {
+  const [featuredPosts, setFeaturedPosts] = useState([]);
+  const router = useRouter();
+
+
+  useEffect(() => {
+    // Fetch top 4 popular posts based on views
+    const fetchFeaturedPosts = async () => {
+      try {
+        const response = await fetch("/api/posts/featured"); // Update this URL to match your backend endpoint
+        const data = await response.json();
+        setFeaturedPosts(data.posts);
+      } catch (error) {
+        console.error("Error fetching Featured posts:", error);
+      }
+    };
+
+    fetchFeaturedPosts();
+  }, []);
+  const handleReadMore = () => {
+    if (featuredPosts) {
+      router.push(`/blog/posts/${featuredPosts.slug}`);
+    }
+  };
   return (
     <div className="featured-wrapper">
       <div className="container">
         <div className="featured-container">
-        <div className="featured-head">
-            
+          <div className="featured-head">
             <motion.span
               initial="offscreen"
               whileInView={"onscreen"}
               variants={titleVaraints}
               className="title"
             >
-              Discover Stories and 
+              Discover Stories and
             </motion.span>
             <motion.span
               initial="offscreen"
               whileInView={"onscreen"}
               variants={tagVaraints}
-              
-            className='tag'>Creative Ideas</motion.span>
+              className="tag"
+            >
+              Creative Ideas
+            </motion.span>
           </div>
-          <div className='post'>
-            <div className='imgContainer'>
-              <Image src="/persons.png" alt='' fill />
-            </div>
-            <div className='textContainer'>
-            <h1 className="postTitle">Lorem ipsum dolor sit amet alim consectetur adipisicing elit.</h1>
-          <p className="postDesc">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Cupiditate, quam nisi magni ea laborum inventore voluptatum
-            laudantium repellat ducimus unde aspernatur fuga. Quo, accusantium
-            quisquam! Harum unde sit culpa debitis.
-          </p>
-          <button className="button">Read More</button>
-            </div>
-          </div>
-    </div>
-    </div>
-    </div>
-  )
-}
 
-export default Featured
+          {featuredPosts && (
+            <div className="post">
+              <div className="imgContainer">
+                <Image style={{borderRadius:"20px"}} src={featuredPosts.img} alt="" fill />
+              </div>
+              <div className="textContainer">
+                <h1 className="postTitle">{featuredPosts.title}</h1>
+                <div
+                  className="postDesc"
+                  dangerouslySetInnerHTML={{
+                    __html: featuredPosts?.desc?.substring(1, 200),
+                  }}
+                />
+              <button className="button" style={{cursor:'pointer'}} onClick={handleReadMore}>
+                Read More
+              </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Featured;

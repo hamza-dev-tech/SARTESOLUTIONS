@@ -6,25 +6,32 @@ const MenuCategories = () => {
   return (
     <div className={styles.categoryList}>
       <Link
-        href="/blog?cat=style"
+        style={{ color: "#867eb5", fontSize: "0.8rem" }}
+        href="/blog/categories?cat=coding"
         className={`${styles.categoryItem} ${styles.style}`}
       >
-        Style
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.fashion}`}>
-        Fashion
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.food}`}>
-        Food
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.travel}`}>
-        Travel
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.culture}`}>
-        Culture
-      </Link>
-      <Link href="/blog" className={`${styles.categoryItem} ${styles.coding}`}>
         Coding
+      </Link>
+      <Link
+        style={{ color: "#867eb5", fontSize: "0.8rem" }}
+        href="/blog/categories?cat=cybersecurity"
+        className={`${styles.categoryItem} ${styles.fashion}`}
+      >
+        Security
+      </Link>
+      <Link
+        style={{ color: "#867eb5", fontSize: "0.8rem" }}
+        href="/blog/categories?cat=technews"
+        className={`${styles.categoryItem} ${styles.food}`}
+      >
+        Tech News
+      </Link>
+      <Link
+        style={{ color: "#867eb5", fontSize: "0.8rem" }}
+        href="/blog/categories?cat=productivity"
+        className={`${styles.categoryItem} ${styles.travel}`}
+      >
+        Productivity
       </Link>
     </div>
   );

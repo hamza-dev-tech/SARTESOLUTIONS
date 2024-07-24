@@ -8,7 +8,7 @@ import Featured from '@/src/components/Blog/featured/Featured'
 import CategoryList from '@/src/components/Blog/categoryList/CategoryList'
 import CardList from '@/src/components/Blog/cardList/CardList'
 import Menu from '@/src/components/Blog/Menu/Menu'
-import NavBar from '@/src/components/Blog/navbar/NavBar'
+
 
 const Blogs = ({ searchParams }) => {
     const page = parseInt(searchParams.page) || 1;
@@ -16,7 +16,7 @@ const Blogs = ({ searchParams }) => {
     return (
       <div className="app">
         <Navbar />
-        <NavBar />
+     
         <Featured />
         <CategoryList />
         <div className="content">

@@ -1,8 +1,9 @@
 .post {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     display: flex;
     align-items: center; 
     gap: 50px;
+
   }
   
   .cardimageContainer {
@@ -18,6 +19,18 @@
   .cardimage {
     object-fit: cover;
     border-radius: 2rem;
+  }
+  .views {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-align: center;
+    margin-left: 1rem;
+  }
+  
+  .eyeIcon {
+    text-align: center;
+    margin-right: 5px;
   }
   
   .cardTextContainer {
@@ -58,6 +71,34 @@
     width: max-content;
     padding: 2px 0px;
   }
+  .title{
+    font-size: 1.5rem;
+    color: #221577;
+    font-weight: bold;
+    line-height: 2rem;
+    text-transform: capitalize;
+}
+.des{
+  font-size: 1rem;
+  color:#867eb5;
+  line-height: 2rem;
+}
+.des.text{
+  color:#867eb5;
+}
+.sec-title{
+  font-size: 2rem;
+  color: #221577;
+  font-weight: 600;
+  text-align: center;
+  line-height: 3rem;
+  text-transform: capitalize;
+}
+.text{
+  color:#867eb5;
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
   
   @media screen and (max-width: 1280px) {
     .cardimageContainer {
@@ -67,4 +108,26 @@
         padding: 1rem;
     }
   }
+
+  @media (max-width: 768px) {
+    .title{
+        font-size: 2.2rem;
+    }
+    .sec-title{
+        font-size: 1.8rem;
+    }
+    .des{
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 640px) {
+    .title{
+        font-size: 1.8rem;
+    }
+    .sec-title{
+        font-size: 1.6rem;
+    }
+   
+}
+
   

@@ -32,7 +32,14 @@ body {
 }
 a{
   text-decoration: none;
+
 }
+a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+
 
 .container{
   width: 100%;

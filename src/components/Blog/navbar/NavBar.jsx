@@ -2,6 +2,7 @@ import React from "react";
 import "./NavBar.css";
 import Image from "next/image";
 import Link from "next/link";
+import AuthLinks from "../authLinks/AuthLinks";
 
 const NavBar = () => {
   return (
@@ -15,9 +16,8 @@ const NavBar = () => {
               Blogs
             </Link>
            
-            <Link href="/blog" className="link">
-              LogIn
-            </Link>
+            
+            <AuthLinks />
           </div>
         </div>
       {/* </div> */}

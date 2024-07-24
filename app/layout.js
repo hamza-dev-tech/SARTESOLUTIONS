@@ -1,3 +1,4 @@
+import AuthProvider from "@/src/providers/AuthProvider";
 import "./globals.css";
 import { Josefin_Sans } from "next/font/google";
 
@@ -32,11 +33,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={Josef.className}>
-     
+     <AuthProvider >
           
              
           {children}
-      
+          </AuthProvider>
       
         </body>
     </html>

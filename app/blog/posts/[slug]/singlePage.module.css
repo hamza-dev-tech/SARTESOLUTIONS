@@ -1,16 +1,35 @@
+.hitwrapper {
+  padding-top: 8rem;
+}
+
+.container {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hitcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .infoContainer {
   display: flex;
-  align-items: center;
-  gap: 50px;
+  /* flex-direction: column; */
+  gap: 20px;
 }
 
 .textContainer {
-  flex: 1;
+  width: 100%;
 }
 
 .title {
-  font-size: 64px;
-  margin-bottom: 50px;
+  font-size: 2.6rem;
+    color: var(--title-color);
+    font-weight: bold;
+    line-height: 3.5rem;
+    text-transform: capitalize;
 }
 
 .user {
@@ -23,6 +42,19 @@
   width: 50px;
   height: 50px;
   position: relative;
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-align: center;
+  margin-left: 1rem;
+}
+
+.eyeIcon {
+  text-align: center;
+  margin-right: 5px;
 }
 
 .avatar {
@@ -43,29 +75,90 @@
 }
 
 .imageContainer {
-  flex: 1;
+  width: 100%;
   height: 350px;
   position: relative;
 }
 
 .image {
   object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+  height: auto;
+  object-fit: cover;
+    border-radius: 2rem;
 }
 
 .content {
   display: flex;
-  gap: 50px;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .post {
-  flex: 5;
-  margin-top: 60px;
+  width: 100%;
 }
 
-.description p {
-  font-size: 20px;
-  font-weight: 300;
+.description {
+  width: -webkit-fill-available;
+}
+
+.description img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Base Styles */
+.description {
+  font-family: 'Georgia', serif; /* Professional serif font for better readability */
+  line-height: 1.8; /* Improved line height for readability */
+  color: #333; /* Dark text color for better contrast */
   margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+.description p {
+  font-size: 1.125rem; /* Base font size for readability */
+  /* Regular weight for body text */
+  margin-bottom: 1.5rem; /* Spacing between paragraphs */
+}
+
+/* Responsive Styling */
+
+/* Large Screens */
+@media screen and (min-width: 1280px) {
+  .description p {
+    font-size: 1.25rem; /* Slightly larger font size for larger screens */
+  }
+}
+
+/* Medium Screens */
+@media screen and (max-width: 1280px) {
+  .description p {
+    font-size: 1.125rem; /* Adjusted size for medium screens */
+  }
+}
+
+/* Small Screens */
+@media screen and (max-width: 1024px) {
+  .description p {
+    font-size: 1rem; /* Adjusted size for smaller screens */
+  }
+}
+
+/* Extra Small Screens */
+@media screen and (max-width: 640px) {
+  .description p {
+    font-size: 0.875rem; /* Smaller size for mobile devices */
+  }
+}
+
+.comment {
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 1536px) {
@@ -73,22 +166,79 @@
     font-size: 54px;
   }
 }
+
 @media screen and (max-width: 1280px) {
   .title {
     font-size: 48px;
   }
-}
-@media screen and (max-width: 1024px) {
-  .imageContainer {
-    display: none;
+  .infoContainer {
+    
+    flex-direction: column;
+    
   }
 }
+
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .title {
     font-size: 36px;
   }
 
-  .description p{
+  .description p {
     font-size: 18px;
+  }
+}
+
+
+
+.imageContainer {
+  width: 100%;
+  
+  position: relative;
+  overflow: hidden; /* Hide any overflow */
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem; /* Adjust as needed */
+}
+
+/* Desktop view */
+@media screen and (min-width: 1024px) {
+  .imageContainer {
+    width: 400px; /* Fixed width for desktop */
+    height: 350px; /* Fixed height for desktop */
+  
+  }
+}
+@media screen and (min-width: 1280px) {
+  .imageContainer {
+    width: 100%; /* Fixed width for desktop */
+    height: auto; /* Fixed height for desktop */
+    padding-top: 40%; 
+    
+  }
+}
+
+/* Mobile view */
+@media screen and (max-width: 1024px) {
+  .imageContainer {
+    width: 100%;
+    height: auto;
+    /* Full width for mobile */
+     /* Adjust height automatically */
+    padding-top: 100%; 
+    
   }
 }
