@@ -1,86 +1,96 @@
-:root {
-  --bg: white;
-  --textColor: black;
-  --softBg: #f0f0f0;
-  --softTextColor: #626262;
+.app{
+  position: relative;
+  transition: all 300ms ease-out;
+}
+.tag{
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.title{
+  font-size: 2.6rem;
+  color: var(--title-color);
+  font-weight: bold;
+  text-align: center;
+  line-height: 3.5rem;
+  text-transform: capitalize;
+}
+.des{
+  font-size: 1.4rem;
+  color: var(--text-color);
+  line-height: 2rem;
+}
+.sec-title{
+  font-size: 2rem;
+  color: var(--title-color);
+  font-weight: 600;
+  text-align: center;
+  line-height: 3rem;
+  text-transform: capitalize;
+}
+.text{
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.8rem;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+@media (max-width: 768px) {
+  .title{
+      font-size: 2.2rem;
+  }
+  .sec-title{
+      font-size: 1.8rem;
+  }
+  .des{
+      font-size: 1.2rem;
+  }
+}
+@media (max-width: 640px) {
+  .title{
+      font-size: 1.8rem;
+  }
+  .sec-title{
+      font-size: 1.6rem;
+  }
+ 
 }
 
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.content{
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
-.dark {
-  --bg: #0f172a;
-  --textColor: #ddd;
-  --softBg: #1f273a;
-  --softTextColor: #a6a6a6;
+@media(min-width:2100px){
+  .content{
+    max-width: 1600px;
+  }
 }
-
-.light {
-  --bg: white;
-  --textColor: black;
-  --softBg: #f0f0f0;
-  --softTextColor: #626262;
+@media(min-width:576px){
+  .content{
+    max-width: 540px;
+  }
 }
-
-.container {
-  min-height: 100vh;
-  background-color: var(--bg);
-  color: var(--textColor);
+@media(min-width:768px){
+  .content{
+    max-width: 720px;
+  }
 }
-
-.wrapper {
-  max-width: 1536px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 80px;
-  padding-right: 80px;
+@media(min-width:992px){
+  .content{
+    max-width: 960px;
+  }
 }
-
-@media screen and (max-width: 1536px) {
-  .wrapper {
-    max-width: 1366px;
+@media(min-width:1200px){
+  .content{
+    max-width: 1200px;
   }
 }
 @media screen and (max-width: 1280px) {
-  .wrapper {
-    max-width: 1024px;
+  .content{
+    flex-direction: column;
   }
-}
-@media screen and (max-width: 1024px) {
-  .wrapper {
-    max-width: 768px;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .wrapper {
-    max-width: 640px;
-  }
-}
-@media screen and (max-width: 640px) {
-  .wrapper {
-    max-width: 475px;
-  }
-}
-
-.ql-container{
-  font-size: 28px !important;
-}
-
-.quill > .ql-container > .ql-editor.ql-blank::before{
-  color: #b3b3b1;
 }

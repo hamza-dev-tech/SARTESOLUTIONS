@@ -1,8 +1,7 @@
 import Navbar from '@/src/components/Navbar/Navbar'
 import React from 'react'
 
-import "./Page.css"
-
+import "./Blog.css"
 import Footer from '@/src/components/Footer/Footer'
 import Featured from '@/src/components/Blog/featured/Featured'
 import CategoryList from '@/src/components/Blog/categoryList/CategoryList'
