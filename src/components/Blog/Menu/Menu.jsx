@@ -12,7 +12,7 @@ const Menu = () => {
     // Fetch top 4 popular posts based on views
     const fetchPopularPosts = async () => {
       try {
-        const response = await fetch("/api/posts/popular"); // Update this URL to match your backend endpoint
+        const response = await fetch("http://sartesolutions.vercel.app/api/posts/popular"); // Update this URL to match your backend endpoint
         const data = await response.json();
         setPopularPosts(data.posts);
       } catch (error) {
@@ -28,7 +28,7 @@ const Menu = () => {
     // Fetch top 4 popular posts based on views
     const fetchPickedPosts = async () => {
       try {
-        const response = await fetch("/api/posts/picked"); // Update this URL to match your backend endpoint
+        const response = await fetch("http://sartesolutions.vercel.app/api/posts/picked"); // Update this URL to match your backend endpoint
         const data = await response.json();
         setPickedPosts(data.posts);
       } catch (error) {

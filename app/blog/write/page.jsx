@@ -103,7 +103,7 @@ const WritePage = () => {
 
   const handleSubmit = async () => {
     const postSlug = slugify(title);
-    const res = await fetch("/api/posts", {
+    const res = await fetch("http://sartesolutions.vercel.app/api/posts", {
       method: "POST",
       body: JSON.stringify({
         title,
@@ -117,7 +117,7 @@ const WritePage = () => {
 
     if (res.status === 200) {
       const data = await res.json();
-      router.push(`/blog/posts/${data.slug}`);
+      router.push(`http://sartesolutions.vercel.app/blog/posts/${data.slug}`);
     }
   };
 

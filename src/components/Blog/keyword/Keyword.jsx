@@ -18,7 +18,7 @@ const fetcher = async (url) => {
 
 const Keyword = ({ postSlug }) => {
   const { data, error, isLoading } = useSWR(
-    `http://localhost:3000/api/keywords?postSlug=${postSlug}`,
+    `http://sartesolutions.vercel.app/api/keywords?postSlug=${postSlug}`,
     fetcher
   );
 

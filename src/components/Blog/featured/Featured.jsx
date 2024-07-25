@@ -15,7 +15,7 @@ const Featured = () => {
     // Fetch top 4 popular posts based on views
     const fetchFeaturedPosts = async () => {
       try {
-        const response = await fetch("/api/posts/featured"); // Update this URL to match your backend endpoint
+        const response = await fetch("http://sartesolutions.vercel.app/api/posts/featured"); // Update this URL to match your backend endpoint
         const data = await response.json();
         setFeaturedPosts(data.posts);
       } catch (error) {

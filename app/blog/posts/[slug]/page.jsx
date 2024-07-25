@@ -8,7 +8,7 @@ import Keyword from "@/src/components/Blog/keyword/Keyword";
 import { FaEye } from "react-icons/fa";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`http://sartesolutions.vercel.app/api/posts/${slug}`, {
     cache: "no-store",
   });
 
