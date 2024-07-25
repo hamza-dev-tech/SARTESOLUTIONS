@@ -1,6 +1,6 @@
-import { getAuthSession } from "@/src/utils/auth";
 import prisma from "@/src/utils/connect";
 import { NextResponse } from "next/server";
+import { getAuthSession } from "@/src/utils/auth"; // Ensure this import is correct
 
 // GET ALL Keywords OF A POST
 export const GET = async (req) => {
@@ -15,11 +15,12 @@ export const GET = async (req) => {
       include: { post: true },
     });
 
-    return new NextResponse(JSON.stringify({ keywords }), { status: 200 });
+    return NextResponse.json({ keywords }, { status: 200 });
   } catch (err) {
-    console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }), { status: 500 }
+    console.error("Error fetching keywords:", err);
+    return NextResponse.json(
+      { message: "Something went wrong!" },
+      { status: 500 }
     );
   }
 };
@@ -28,6 +29,12 @@ export const GET = async (req) => {
 export const POST = async (req) => {
   const session = await getAuthSession();
 
+  if (!session) {
+    return NextResponse.json(
+      { message: "Not Authenticated!" },
+      { status: 401 }
+    );
+  }
 
   try {
     const body = await req.json();
@@ -35,11 +42,12 @@ export const POST = async (req) => {
       data: { ...body, userEmail: session.user.email },
     });
 
-    return new NextResponse(JSON.stringify(keyword), { status: 200 });
+    return NextResponse.json(keyword, { status: 200 });
   } catch (err) {
-    console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }), { status: 500 }
+    console.error("Error creating keyword:", err);
+    return NextResponse.json(
+      { message: "Something went wrong!" },
+      { status: 500 }
     );
   }
 };

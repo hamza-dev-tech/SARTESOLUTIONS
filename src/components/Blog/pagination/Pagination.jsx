@@ -20,6 +20,7 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
         disabled={!hasNext}
         className='pag-button'
         onClick={() => router.push(`?page=${page + 1}`)}
+        aria-label="Next page"
       >
         Next
       </button>

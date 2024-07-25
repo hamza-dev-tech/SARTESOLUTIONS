@@ -15,7 +15,7 @@ const Featured = () => {
     // Fetch top 4 popular posts based on views
     const fetchFeaturedPosts = async () => {
       try {
-        const response = await fetch("http://sartesolutions.vercel.app/api/posts/featured"); // Update this URL to match your backend endpoint
+        const response = await fetch("https://sartesolutions.vercel.app/api/posts/featured"); // Update this URL to match your backend endpoint
         const data = await response.json();
         setFeaturedPosts(data.posts);
       } catch (error) {
@@ -26,16 +26,9 @@ const Featured = () => {
     fetchFeaturedPosts();
   }, []);
 
-  const handleReadMore = () => {
-    if (featuredPosts) {
-      router.push(`/blog/posts/${featuredPosts.slug}`);
-    }
+  const handleReadMore = (slug) => {
+    router.push(`/blog/posts/${slug}`);
   };
-
-  // Convert HTML to plain text and limit the description length
-  const description = featuredPosts.desc 
-    ? htmlToText(featuredPosts.desc, { wordwrap: 130 }).substring(0, 500)
-    : "";
 
   return (
     <div className="featured-wrapper">
@@ -60,24 +53,33 @@ const Featured = () => {
             </motion.span>
           </div>
 
-          {featuredPosts && (
-            <div className="post">
-              <div className="imgContainer">
-                <Image
-                  style={{ borderRadius: "20px" }}
-                  src={featuredPosts.img}
-                  alt=""
-                  fill
-                />
+          {featuredPosts.length > 0 ? (
+            featuredPosts.map(post => (
+              <div className="post" key={post.id}>
+                <div className="imgContainer">
+                  {post.img && (
+                    <Image
+                      style={{ borderRadius: "20px" }}
+                      src={post.img}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  )}
+                </div>
+                <div className="textContainer">
+                  <h1 className="postTitle">{post.title}</h1>
+                  <div className="postDesc">
+                    {htmlToText(post.desc, { wordwrap: 130 }).substring(0, 500)}
+                  </div>
+                  <button className="read-button" style={{ cursor: 'pointer' }} onClick={() => handleReadMore(post.slug)}>
+                    Read More
+                  </button>
+                </div>
               </div>
-              <div className="textContainer">
-                <h1 className="postTitle">{featuredPosts.title}</h1>
-                <div className="postDesc">{description}</div>
-                <button className="read-button" style={{ cursor: 'pointer' }} onClick={handleReadMore}>
-                  Read More
-                </button>
-              </div>
-            </div>
+            ))
+          ) : (
+            <div>No featured posts available</div>
           )}
         </div>
       </div>

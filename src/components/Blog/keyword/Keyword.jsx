@@ -9,7 +9,7 @@ const fetcher = async (url) => {
   const data = await res.json();
 
   if (!res.ok) {
-    const error = new Error(data.message);
+    const error = new Error(data.message || 'Error fetching data');
     throw error;
   }
 
@@ -17,17 +17,15 @@ const fetcher = async (url) => {
 };
 
 const Keyword = ({ postSlug }) => {
-  const { data, error, isLoading } = useSWR(
-    `http://sartesolutions.vercel.app/api/keywords?postSlug=${postSlug}`,
+  const { data, error } = useSWR(
+    `https://sartesolutions.vercel.app/api/keywords?postSlug=${postSlug}`,
     fetcher
   );
 
-  useEffect(() => {}, [data]);
-
   const [desc, setDesc] = useState("");
 
-  if (error) return <div>Error loading data</div>;
-  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading data: {error.message}</div>;
+  if (!data) return <div>Loading...</div>;
 
   return (
     <>
@@ -43,7 +41,7 @@ const Keyword = ({ postSlug }) => {
         Keywords
       </span>
       <div className={styles.keywordList}>
-        {Array.isArray(data?.keywords)
+        {Array.isArray(data.keywords) && data.keywords.length > 0
           ? data.keywords.map((item, index) => (
               <div className={styles.keyword} key={index}>
                 {item.keyword}

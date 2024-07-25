@@ -9,11 +9,12 @@ export const GET = async (req) => {
       },
       take: 4,
     });
-    return new NextResponse(JSON.stringify({ posts }), { status: 200 });
+    return NextResponse.json({ posts }, { status: 200 });
   } catch (err) {
-    console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }), { status: 500 }
+    console.error("Error fetching most viewed posts:", err);
+    return NextResponse.json(
+      { message: "Something went wrong!" },
+      { status: 500 }
     );
   }
 };

@@ -8,12 +8,12 @@ import Keyword from "@/src/components/Blog/keyword/Keyword";
 import { FaEye } from "react-icons/fa";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://sartesolutions.vercel.app/api/posts/${slug}`, {
+  const res = await fetch(`https://sartesolutions.vercel.app/api/posts/${slug}`, {
     cache: "no-store",
   });
 
   if (!res.ok) {
-    throw new Error("Failed");
+    throw new Error("Failed to fetch data");
   }
 
   return res.json();
@@ -22,12 +22,26 @@ const getData = async (slug) => {
 const SinglePage = async ({ params }) => {
   const { slug } = params;
 
-  const data = await getData(slug);
+  let data;
+  try {
+    data = await getData(slug);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return (
+      <>
+        <Navbar />
+        <div className={styles.errorContainer}>
+          <h1>Error loading post</h1>
+          <p>There was an error loading the post. Please try again later.</p>
+        </div>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
       <Navbar />
-     
       <div className={styles.hitwrapper}>
         <div className={styles.container}>
           <div className={styles.hitcontainer}>
@@ -40,7 +54,8 @@ const SinglePage = async ({ params }) => {
                       <Image
                         src={data.user.image}
                         alt=""
-                        fill
+                        layout="fill"
+                        objectFit="cover"
                         className={styles.avatar}
                       />
                     </div>
@@ -50,15 +65,21 @@ const SinglePage = async ({ params }) => {
                     <span className={styles.date}>
                       {data?.createdAt.substring(0, 10)}
                     </span>
+                    <span className={styles.views}>
+                      <FaEye className={styles.eyeIcon} /> {data.views}
+                    </span>
                   </div>
-                  <span className={styles.views}>
-            <FaEye className={styles.eyeIcon} /> {data.views}
-          </span>
                 </div>
               </div>
               {data?.img && (
                 <div className={styles.imageContainer}>
-                  <Image src={data.img} alt="" fill className={styles.image} />
+                  <Image
+                    src={data.img}
+                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                    className={styles.image}
+                  />
                 </div>
               )}
             </div>

@@ -2,8 +2,16 @@ import prisma from "@/src/utils/connect";
 import { NextResponse } from "next/server";
 
 // GET SINGLE POST
-export const GET = async (req, { params }) => {
-  const { slug } = params;
+export const GET = async (req) => {
+  const { searchParams } = new URL(req.url);
+  const slug = searchParams.get("slug");
+
+  if (!slug) {
+    return NextResponse.json(
+      { message: "Slug is required" },
+      { status: 400 }
+    );
+  }
 
   try {
     const post = await prisma.post.update({
@@ -12,11 +20,12 @@ export const GET = async (req, { params }) => {
       include: { user: true },
     });
 
-    return new NextResponse(JSON.stringify(post, { status: 200 }));
+    return NextResponse.json(post, { status: 200 });
   } catch (err) {
-    console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
+    console.error("Error fetching post:", err);
+    return NextResponse.json(
+      { message: "Something went wrong!" },
+      { status: 500 }
     );
   }
 };

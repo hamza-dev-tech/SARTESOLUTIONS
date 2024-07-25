@@ -1,5 +1,6 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
+import { useEffect } from "react";
 import styles from "./loginPage.module.css";
 import { useRouter } from "next/navigation";
 import Navbar from "@/src/components/Navbar/Navbar";
@@ -9,12 +10,14 @@ const LoginPage = () => {
   const { status } = useSession();
   const router = useRouter();
 
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("https://sartesolutions.vercel.app/blog");
+    }
+  }, [status, router]);
+
   if (status === "loading") {
     return <div className={styles.loading}>Loading...</div>;
-  }
-
-  if (status === "authenticated") {
-    router.push("/blog");
   }
   
   return (

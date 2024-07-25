@@ -1,4 +1,3 @@
-import { getAuthSession } from "@/src/utils/auth";
 import prisma from "@/src/utils/connect";
 import { NextResponse } from "next/server";
 
@@ -24,22 +23,23 @@ export const GET = async (req) => {
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where }),
     ]);
-    return new NextResponse(JSON.stringify({ posts, count }), { status: 200 });
+    return NextResponse.json({ posts, count }, { status: 200 });
   } catch (err) {
-    console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }), { status: 500 }
+    console.error("Error fetching posts:", err);
+    return NextResponse.json(
+      { message: "Something went wrong!" },
+      { status: 500 }
     );
   }
 };
-
 // CREATE A POST WITH KEYWORDS
 export const POST = async (req) => {
   const session = await getAuthSession();
 
   if (!session) {
-    return new NextResponse(
-      JSON.stringify({ message: "Not Authenticated!" }), { status: 401 }
+    return NextResponse.json(
+      { message: "Not Authenticated!" },
+      { status: 401 }
     );
   }
 
@@ -67,11 +67,12 @@ export const POST = async (req) => {
       });
     }
 
-    return new NextResponse(JSON.stringify(post), { status: 200 });
+    return NextResponse.json(post, { status: 200 });
   } catch (err) {
-    console.log(err);
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }), { status: 500 }
+    console.error("Error creating post:", err);
+    return NextResponse.json(
+      { message: "Something went wrong!" },
+      { status: 500 }
     );
   }
 };
