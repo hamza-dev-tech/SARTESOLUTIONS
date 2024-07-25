@@ -9,7 +9,7 @@ const MenuPosts = ({ posts = [], withImage }) => {
     <div className={styles.items}>
       {posts.length > 0 ? (
         posts.map((post) => (
-          <Link href={`/blog/posts/${post.slug}`} key={post.id} className={styles.item}>
+          <Link href={`https://sartesolutions.vercel.app/blog/posts/${post.slug}`} key={post.id} className={styles.item}>
             {withImage && (
               <div className={styles.imageContainer}>
                 <Image src={post.img} alt="" fill className={styles.image} />

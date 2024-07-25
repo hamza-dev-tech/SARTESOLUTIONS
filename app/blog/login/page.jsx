@@ -7,7 +7,6 @@ import Footer from "@/src/components/Footer/Footer";
 
 const LoginPage = () => {
   const { status } = useSession();
-
   const router = useRouter();
 
   if (status === "loading") {
@@ -15,21 +14,20 @@ const LoginPage = () => {
   }
 
   if (status === "authenticated") {
-    router.push("/blog")
+    router.push("/blog");
   }
   
   return (
     <>
-    <Navbar />
-    <div className={styles.container}>
-      <div className={styles.wrapper}>
-        <div className={styles.socialButton} onClick={() => signIn("google")}>
-          Sign in with Google
+      <Navbar />
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
+          <div className={styles.socialButton} onClick={() => signIn("google")}>
+            Sign in with Google
+          </div>
         </div>
-        
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };
