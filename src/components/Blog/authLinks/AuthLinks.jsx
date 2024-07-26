@@ -18,9 +18,9 @@ const AuthLinks = ({color}) => {
         </Link>
       ) : (
         <div className={styles.cont}>
-          {/* <Link style={{color: color}} href="/blog/write" className={styles.link}>
+          <Link style={{color: color}} href="/blog/write" className={styles.link}>
             Write
-          </Link> */}
+          </Link>
           <span style={{color: "red"}} className={styles.link} onClick={signOut}>
             Logout
           </span>
