@@ -7,8 +7,11 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { useScroll } from "framer-motion";
 import Link from "next/link";
 import AuthLinks from "../Blog/authLinks/AuthLinks";
+import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session, status } = useSession();
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
   const [navStyle, setNavStyle] = useState("");
   const [color, setColor] = useState("white");
@@ -57,7 +60,17 @@ const Navbar = () => {
               <a style={{ color: color, textDecoration: 'none' }} href="/about">About</a>
               <a style={{ color: color, textDecoration: 'none' }} href="/blog">Blog</a>
               <AuthLinks color={color} />
+              {session?.user?.image && (
+            <Image
+              src={session.user.image}
+              alt="User Image"
+              width={40}
+              height={40}
+              className="avatar"
+            />
+          )}
               <a className="JoinBtn" href="/contact">Contact</a>
+
 
             </div>
           </div>
@@ -107,9 +120,18 @@ const Navbar = () => {
             Blog
           </a>
           <AuthLinks />
-          <a style={{ textDecoration: 'none' }} className="m-JoinBtn" href="/contact" onClick={() => setMobileMenuOpened(false)}>
+          <a style={{ textDecoration: 'none', marginTop:"30px" }} className="m-JoinBtn" href="/contact" onClick={() => setMobileMenuOpened(false)}>
             Contact
           </a>
+          {session?.user?.image && (
+            <Image
+              src={session.user.image}
+              alt="User Image"
+              width={40}
+              height={40}
+              className="avatar"
+            />
+          )}
         </div>
       </div>
     </div>

@@ -22,6 +22,8 @@
   border-radius: 50%;
   border: 3px solid lightgray;
   object-fit: cover;
+  width: 80px;
+  height: 50px;
 }
 
 .textContainer {
@@ -50,29 +52,27 @@
   margin-right: 5px;
 }
 
-.category.travel {
+.coding {
   background-color: #ff7857;
 }
 
-.culture {
+.technews {
   background-color: #ffb14f;
 }
 
-.food {
+.techculture {
   background-color: #7fb881;
 }
 
-.fashion {
+.cybersecurity {
   background-color: #ff7887;
 }
 
-.coding {
+.productivity {
   background-color: #775aec;
 }
 
-.style {
-  background-color: #789cff;
-}
+
 
 
 

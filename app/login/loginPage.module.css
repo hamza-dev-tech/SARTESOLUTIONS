@@ -10,7 +10,16 @@
   padding: 100px;
   align-items: center;
   justify-content: center;
-  
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: #087dea4b;
+  border-radius: 2rem;
+  padding: 4rem;
 }
 
 .socialButton {
@@ -24,6 +33,8 @@
   align-items: center;
   justify-content: center;
   align-self: center;
+  width: 100%;
+  
 }
 
 .socialButton:first-child {
@@ -42,6 +53,7 @@
 @media screen and (max-width: 768px) {
   .wrapper {
     padding: 50px 100px;
+    background-color: transparent;
   }
 }
 @media screen and (max-width: 640px) {
