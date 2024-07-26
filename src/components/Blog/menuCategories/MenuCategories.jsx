@@ -7,28 +7,28 @@ const MenuCategories = () => {
     <div className={styles.categoryList}>
       <Link
         style={{ color: "#867eb5", fontSize: "0.8rem" }}
-        href="https://sartesolutions.vercel.app/blog/categories?cat=coding"
+        href="/blog/categories?cat=coding"
         className={`${styles.categoryItem} ${styles.style}`}
       >
         Coding
       </Link>
       <Link
         style={{ color: "#867eb5", fontSize: "0.8rem" }}
-        href="https://sartesolutions.vercel.app/blog/categories?cat=cybersecurity"
+        href="/blog/categories?cat=cybersecurity"
         className={`${styles.categoryItem} ${styles.fashion}`}
       >
         Security
       </Link>
       <Link
         style={{ color: "#867eb5", fontSize: "0.8rem" }}
-        href="https://sartesolutions.vercel.app/blog/categories?cat=technews"
+        href="/blog/categories?cat=technews"
         className={`${styles.categoryItem} ${styles.food}`}
       >
         Tech News
       </Link>
       <Link
         style={{ color: "#867eb5", fontSize: "0.8rem" }}
-        href="https://sartesolutions.vercel.app/blog/categories?cat=productivity"
+        href="/blog/categories?cat=productivity"
         className={`${styles.categoryItem} ${styles.travel}`}
       >
         Productivity

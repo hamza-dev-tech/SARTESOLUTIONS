@@ -4,16 +4,15 @@ import { NextResponse } from "next/server";
 // Get the featured post
 export const GET = async (req) => {
   try {
-    const post = await prisma.post.findFirst({
+    const posts = await prisma.post.findFirst({
       where: { featured: true }
     });
 
-    return NextResponse.json({ post }, { status: 200 });
+    return new NextResponse(JSON.stringify({ posts }), { status: 200 });
   } catch (err) {
-    console.error("Error fetching featured post:", err);
-    return NextResponse.json(
-      { message: "Something went wrong!" },
-      { status: 500 }
+    console.log(err);
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong!" }), { status: 500 }
     );
   }
 };

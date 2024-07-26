@@ -1,3 +1,4 @@
+import { getAuthSession } from "@/src/utils/auth";
 import prisma from "@/src/utils/connect";
 import { NextResponse } from "next/server";
 
@@ -5,7 +6,7 @@ import { NextResponse } from "next/server";
 export const GET = async (req) => {
   const { searchParams } = new URL(req.url);
 
-  const page = parseInt(searchParams.get("page"), 10) || 1;
+  const page = searchParams.get("page");
   const cat = searchParams.get("cat");
 
   const POST_PER_PAGE = 4;
@@ -23,56 +24,48 @@ export const GET = async (req) => {
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where }),
     ]);
-    return NextResponse.json({ posts, count }, { status: 200 });
+    return new NextResponse(JSON.stringify({ posts, count }), { status: 200 });
   } catch (err) {
-    console.error("Error fetching posts:", err);
-    return NextResponse.json(
-      { message: "Something went wrong!" },
+    console.log(err);
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong!" }),
       { status: 500 }
     );
   }
 };
-// CREATE A POST WITH KEYWORDS
+
+// CREATE A POST
 export const POST = async (req) => {
   const session = await getAuthSession();
 
   if (!session) {
-    return NextResponse.json(
-      { message: "Not Authenticated!" },
-      { status: 401 }
+    return new NextResponse(
+      JSON.stringify({ message: "Not Authenticated!" }, { status: 401 })
     );
   }
 
   try {
-    const { title, desc, img, slug, catSlug, keywords } = await req.json();
+    const body = await req.json();
+    const { keywords, ...postData } = body;
 
     const post = await prisma.post.create({
-      data: {
-        title,
-        desc,
-        img,
-        slug,
-        catSlug,
-        userEmail: session.user.email,
-      },
+      data: { ...postData, userEmail: session.user.email },
     });
 
-    // Save keywords
     if (keywords && keywords.length > 0) {
-      await prisma.keyword.createMany({
-        data: keywords.map((keyword) => ({
-          keyword,
-          postSlug: post.slug,
-        })),
-      });
+      const keywordPromises = keywords.map((keyword) =>
+        prisma.keyword.create({
+          data: { keyword, postSlug: post.slug },
+        })
+      );
+      await Promise.all(keywordPromises);
     }
 
-    return NextResponse.json(post, { status: 200 });
+    return new NextResponse(JSON.stringify(post, { status: 200 }));
   } catch (err) {
-    console.error("Error creating post:", err);
-    return NextResponse.json(
-      { message: "Something went wrong!" },
-      { status: 500 }
+    console.log(err);
+    return new NextResponse(
+      JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
     );
   }
 };

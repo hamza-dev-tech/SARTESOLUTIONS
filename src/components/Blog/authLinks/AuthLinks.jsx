@@ -1,17 +1,19 @@
 "use client";
 import Link from "next/link";
 import styles from "./authLinks.module.css";
-
+import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 
 const AuthLinks = ({color}) => {
-  const { data: session, status } = useSession();
+
+
+  const { status } = useSession();
 
   return (
     <div >
       {status === "unauthenticated" ? (
-        <Link style={{color: color}} href="/blog/login" className={styles.link}>
+        <Link style={{color: color}} href="/login" className={styles.link}>
           Login
         </Link>
       ) : (
@@ -22,7 +24,7 @@ const AuthLinks = ({color}) => {
           <span style={{color: "red"}} className={styles.link} onClick={signOut}>
             Logout
           </span>
-          {session?.user?.image && (
+          {useSession?.user?.image && (
             <Image
               src={session.user.image}
               alt="User Image"

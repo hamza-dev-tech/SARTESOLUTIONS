@@ -1,4 +1,4 @@
-import React from "react";
+
 import styles from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,9 +13,11 @@ const Card = ({ item, key }) => {
 
   return (
     <div className={styles.post} key={key}>
+       {item.img && (
       <div className={styles.cardimageContainer}>
         <Image src={item.img} alt="" fill className={styles.cardimage} />
       </div>
+       )}
       <div className={styles.cardTextContainer}>
         <div className={styles.cardDetail}>
           <span className={styles.date}>
