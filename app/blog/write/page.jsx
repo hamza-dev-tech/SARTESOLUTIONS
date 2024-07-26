@@ -14,12 +14,16 @@ import {
 } from "firebase/storage";
 
 import { app } from "@/Firebase";
-import ReactQuill from "react-quill";
+
+import dynamic from 'next/dynamic';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
 
 const modules = {
   toolbar: {
     container: [
-      [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+      [{ 'header': '1'}, {'header': '2'}],
       [{size: []}],
       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
       [{'list': 'ordered'}, {'list': 'bullet'}, 
@@ -31,7 +35,7 @@ const modules = {
   },
 };
 const formats = [
-  'header', 'font', 'size',
+  'header', 'size',
   'bold', 'italic', 'underline', 'strike', 'blockquote',
   'list', 'bullet', 'indent',
   'link', 'align', 'image'
