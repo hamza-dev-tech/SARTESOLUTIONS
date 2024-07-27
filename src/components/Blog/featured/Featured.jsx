@@ -15,7 +15,12 @@ const Featured = () => {
     // Fetch top 4 popular posts based on views
     const fetchFeaturedPosts = async () => {
       try {
-        const response = await fetch("/api/posts/featured"); // Update this URL to match your backend endpoint
+        const response = await fetch(
+          `/api/featured`,
+          {
+            cache: "no-store",
+          }
+        ); // Update this URL to match your backend endpoint
         const data = await response.json();
         setFeaturedPosts(data.posts);
       } catch (error) {
@@ -34,7 +39,7 @@ const Featured = () => {
 
   // Convert HTML to plain text and limit the description length
   const description = featuredPosts?.desc 
-    ? htmlToText(featuredPosts.desc, { wordwrap: 130 }).substring(0, 500)
+    ? htmlToText(featuredPosts.desc, { wordwrap: 130 }).substring(0, 420)
     : "";
 
   return (
