@@ -5,14 +5,20 @@ import { NextResponse } from "next/server";
 export const GET = async (req) => {
   try {
     const posts = await prisma.post.findFirst({
-      where: { featured: true }
+      where: { featured: true },
     });
+
+
 
     return new NextResponse(JSON.stringify({ posts }), { status: 200 });
   } catch (err) {
-    console.log(err);
+    console.log("API Error:", err); // Add console log
     return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }), { status: 500 }
+      JSON.stringify({ message: "Something went wrong!" }),
+      { status: 500 }
     );
   }
 };
+
+
+

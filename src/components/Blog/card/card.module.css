@@ -78,6 +78,7 @@
     font-weight: bold;
     line-height: 2rem;
     text-transform: capitalize;
+    text-align: left;
 }
 .postDes{
   font-size: 1rem;
