@@ -3,8 +3,11 @@ import "./globals.css";
 import { Josefin_Sans } from "next/font/google";
 
 export const metadata = {
-  title: "SARTE SOLUTIONS",
-  description: "Created By Hamza, founder of SARTE SOLUTIONS.",
+  title: {
+    default: "Sarte Solution",
+    template: "%s - My Blog" 
+  },
+  description: "Sarte Solution, established by Hamza Shabbir in Pakistan, provides a wide array of digital services to enhance business operations. Specializing in digital marketing, web development, IT solutions, creative services, emerging technologies, and education and training, Sarte Solution offers tailored solutions to meet the unique needs of organizations. From SEO and content marketing to custom website design, cloud services, AI, and corporate training, Sarte Solution empowers businesses to thrive in the digital age.",
 };
 
 const Josef = Josefin_Sans({
