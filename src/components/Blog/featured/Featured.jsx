@@ -58,7 +58,8 @@ const Featured = async () => {
             <div className="post">
               <div className="imgContainer">
                 <Image
-                  style={{ borderRadius: "20px" }}
+                  style="post-img"
+                 
                   src={post.img}
                   alt={post.title || "Featured Image"}
                   fill

@@ -12,13 +12,10 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-
 import { app } from "@/Firebase";
-
 import dynamic from 'next/dynamic';
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
-
 
 const modules = {
   toolbar: {
@@ -29,7 +26,6 @@ const modules = {
       [{'list': 'ordered'}, {'list': 'bullet'}, 
        {'indent': '-1'}, {'indent': '+1'}],
       ['link'],
-                                              
     ],
   },
 };
@@ -131,7 +127,7 @@ const WritePage = () => {
 
   const addKeyword = (e) => {
     e.preventDefault();
-    if (keywordInput.trim() !== "") {
+    if (keywordInput.trim() !== "" && keywords.length < 10) {
       setKeywords([...keywords, keywordInput.trim()]);
       setKeywordInput("");
     }
@@ -190,11 +186,11 @@ const WritePage = () => {
       <div className={styles.leftside}>
         <input
           type="text"
-          placeholder="Title"
+          placeholder="Title (Max 80 characters)"
           className={styles.input}
           onChange={(e) => setTitle(e.target.value)}
+          maxLength={80}
         />
-
         <div className={styles.editor}>
           <ReactQuill
             ref={quillRef}
@@ -239,9 +235,13 @@ const WritePage = () => {
               className={styles.thumbnail}
             />
           ) : (
-            "Upload Thumbnail (Square)"
+            <>
+              Upload Thumbnail
+             
+            </>
           )}
         </label>
+        <small style={{marginBottom:'50px', marginTop:"10px"}}>Size less than 6MB, 1200 x 630 px recommended</small>
         <select
           className={styles.select}
           onChange={(e) => setCatSlug(e.target.value)}
@@ -256,7 +256,7 @@ const WritePage = () => {
           <form onSubmit={addKeyword}>
             <input
               type="text"
-              placeholder="Add a keyword"
+              placeholder="Add a keyword (Max 10)"
               value={keywordInput}
               onChange={(e) => setKeywordInput(e.target.value)}
               className={styles.keywordInput}

@@ -1,135 +1,130 @@
 .post {
-    margin-bottom: 70px;
-    display: flex;
-    align-items: center; 
-    gap: 50px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 2rem;
+  gap: 20px; /* Reduced gap for better spacing */
+}
 
+.cardimageContainer {
+  width: 100%; /* Ensure the container is full width */
+  max-width: 700px; /* Set a maximum width */
+  height: 300px; /* Set a fixed height for the image container */
+  position: relative;
+}
+.title{
+  font-size: 2.5rem;
+  text-align: left;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+}
+.title:hover{
+  color: var(--secondary-color);
+}
+.postDes {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+.cardDetail{
+  display: flex;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+.views{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.cardimage {
+
+  border-radius: 1.5rem;
+  width: 100%; /* Ensure image takes full width of its container */
+  height: auto; /* Ensure image takes full height of its container */
+}
+
+.cardTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+  max-width: 700px; /* Match the max width of the image container */
+  text-align: justify;
+}
+
+/* Media queries */
+@media screen and (max-width: 1280px) {
+
+  .post{
+    margin-left: auto;
+    margin-right: auto;
   }
-  
+
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .postDes {
+    font-size: 1rem;
+  }
   .cardimageContainer {
-    flex: 1;
-    height: 400px;
+    width: 100%; /* Ensure the container is full width */
+    max-width: 700px; /* Set a maximum width */
+    height: 200px; /* Set a fixed height for the image container */
     position: relative;
   }
-  .cardDetail{
-    display: flex;
-    gap: 5px;
-  }
-  
+ 
   .cardimage {
-    object-fit: cover;
+  
     border-radius: 1.5rem;
+    width: 100%; /* Ensure image takes full width of its container */
+    height: auto; /* Ensure image takes full height of its container */
+  }
+}
 
-  }
-  .views {
-    display: flex;
-    align-items: center;
-    color: #333;
-    text-align: center;
-    margin-left: 1rem;
-  }
-  
-  .eyeIcon {
-    text-align: center;
-    margin-right: 5px;
-  }
-  
-  .cardTextContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    flex: 1;
-    text-align: justify;
-  }
-  
-  .carddate {
-    color: gray;
-    font-weight: 500;
-  }
-  .dash{
-    color: gray;
-    font-weight: 500;
-  }
-  
-  .cardcategory {
-    color: crimson;
-    font-weight: 500;
-  }
-  
-  .carddesc {
-    font-size: 18px;
-    font-weight: 300;
-    color: gray;
-  }
-  .cardTitle{
-    font-size: 22px;
-    font: bold;
-  }
-  
-  
-  .cardlink {
-    border-bottom: 1px solid crimson;
-    width: max-content;
-    padding: 2px 0px;
-  }
-  .title{
+@media (max-width: 640px) {
+  .title {
     font-size: 1.5rem;
-    color: #221577;
-    font-weight: bold;
-    line-height: 2rem;
-    text-transform: capitalize;
-    text-align: left;
+  }
+  .postDes {
+    font-size: 1rem;
+  }
 }
-.postDes{
-  font-size: 1rem;
-  color:#867eb5;
-  line-height: 2rem;
-}
-.des.text{
-  color:#867eb5;
-}
-.sec-title{
-  font-size: 2rem;
-  color: #221577;
-  font-weight: 600;
-  text-align: center;
-  line-height: 3rem;
+
+
+.category {
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+  font-size: 12px;
+  color: white;
+  width: max-content;
   text-transform: capitalize;
 }
-.text{
-  color:#867eb5;
-  font-size: 1.1rem;
-  line-height: 2rem;
-}
-  
-  @media screen and (max-width: 1280px) {
-    .cardimageContainer {
-      display: none;
-    }
-    .post{
-        padding: 0rem;
-    }
-  }
 
-  @media (max-width: 768px) {
-    .title{
-        font-size: 2.2rem;
-    }
-    .sec-title{
-        font-size: 1.8rem;
-    }
-    .des{
-        font-size: 1.2rem;
-    }
-}
-@media (max-width: 640px) {
-    .title{
-        font-size: 1.8rem;
-    }
-    .sec-title{
-        font-size: 1.6rem;
-    }
-   
+.coding {
+  background-color: #ff7857;
 }
 
-  
+.technews {
+  background-color: #ffb14f;
+}
+
+.techculture {
+  background-color: #7fb881;
+}
+
+.cybersecurity {
+  background-color: #ff7887;
+}
+
+.productivity {
+  background-color: #775aec;
+}
+

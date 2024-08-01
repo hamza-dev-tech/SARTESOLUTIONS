@@ -82,12 +82,7 @@ const ProjectsSlider = () => {
                     style={{ maxHeight: "150px", borderRadius: "1rem" }}
                   />
                   <span className="sec-title">{project.projectName}</span>
-                  <span>
-                    {project.projectDes.length > 130
-                      ? `${project.projectDes.slice(0, 130)}...... Click on link below`
-                      : project.projectDes}
-                  </span>
-                </div>
+                 
                 <div className="c-info">
                   <img
                     src={"https://cdn-icons-png.flaticon.com/512/25/25231.png"}
@@ -96,10 +91,12 @@ const ProjectsSlider = () => {
                     width={40}
                     style={{ maxHeight: "40px", borderRadius: "1rem" }}
                   />
-                  <div className="c-person">
+                   <div className="c-person">
                     <a className="des" href={project.githubLink} target="_blank" rel="noopener noreferrer">GitHub Repository</a>
                   </div>
                 </div>
+                </div>
+                 
               </div>
             ))}
           </Slider>

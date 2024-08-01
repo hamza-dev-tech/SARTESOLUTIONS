@@ -8,34 +8,47 @@ import Hero from "@/src/components/Hero/Hero";
 import AboutUs from "@/src/components/AboutUs/AboutUs";
 
 export const metadata = {
-  title: "About Us - Sarte Solutions",
-  description: "At Sarte Solutions, we specialize in delivering cutting-edge digital solutions tailored to meet the unique needs of your business. Our services range from web development and IT solutions to digital marketing and emerging technologies. We are committed to helping your business thrive in the digital age.",
-  keywords: "Sarte Solutions, about us, digital solutions, web development, IT solutions, digital marketing, emerging technologies",
+  title: "About | Sarte Solution",
+  description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
+  author: "Sarte Solution Team",
   alternates: {
-    canonical: '/',
+    canonical: `${process.env.NEXTAUTH_URL}/about`,
     languages: {
       'en-US': '/en-US',
       'de-DE': '/de-DE',
     },
   },
   openGraph: {
-    title: "About Us - Sarte Solutions",
-    description: "At Sarte Solutions, we specialize in delivering cutting-edge digital solutions tailored to meet the unique needs of your business. Our services range from web development and IT solutions to digital marketing and emerging technologies. We are committed to helping your business thrive in the digital age.",
+    title: "About | Sarte Solution",
+    description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
     url: `${process.env.NEXTAUTH_URL}/about`,
     images: [
       {
-        url: '/opengraph-image-about.png',
+        url: `/og-image.png`,
         width: 1200,
         height: 630,
-        alt: 'Sarte Solutions About Us',
+        alt: 'About | Sarte Solution',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us - Sarte Solutions",
-    description: "At Sarte Solutions, we specialize in delivering cutting-edge digital solutions tailored to meet the unique needs of your business. Our services range from web development and IT solutions to digital marketing and emerging technologies. We are committed to helping your business thrive in the digital age.",
-    image: "/opengraph-image-about.png",
+    title: "About | Sarte Solution",
+    description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
+    image: "/og-image.png",
+  },
+  robots: 'index, follow',
+  schema: {
+    "@context": "https://schema.org",
+    "@type": "DigitalSolutions",
+    headline: "About | Sarte Solution",
+    description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
+    image: "/og-image.png",
+    author: {
+      "@type": "Organization",
+      name: "Sarte Solution",
+    },
+
   },
 };
 

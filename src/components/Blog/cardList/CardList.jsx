@@ -34,7 +34,7 @@ const CardList = async ({page, cat}) => {
       <div className="card-container">
         <div className="card">
         <span
-              style={{fontSize:'2rem', }}
+              style={{fontSize:'2rem', marginBottom:'2rem' }}
               className="title"
 
             >

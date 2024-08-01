@@ -113,7 +113,17 @@
   line-height: 3.5rem;
   text-transform: capitalize;
 }
-
+.socialShare{
+  padding-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+.socialShare a{
+  color: var(--secondary-color);
+}
+.socialShare a:hover{
+  color: gray;
+}
 .description h2{
   color: var(--secondary-color);
   font-size: 1.5rem;
@@ -241,11 +251,11 @@
 
 
 
-.imageContainer {
+/* .imageContainer {
   width: 100%;
   
   position: relative;
-  overflow: hidden; /* Hide any overflow */
+  overflow: hidden; 
 }
 
 .image {
@@ -255,46 +265,93 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 2rem; /* Adjust as needed */
+  border-radius: 2rem; 
+} */
+
+.imageContainer {
+  width: 100%; /* Full width of the parent container */
+  max-width: 700px; /* Maximum width of the image container */
+  height: 300px; /* Fixed height */
+  position: relative;
+  overflow: hidden; /* Hide any overflow */
+  border-radius: 1.2rem;
+}
+
+.image {
+  border-radius: 1.2rem;
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
 }
 
 /* Desktop view */
 @media screen and (min-width: 1024px) {
-  .imageContainer {
-    width: 400px; /* Fixed width for desktop */
-    height: 400px; /* Fixed height for desktop */
-    margin-left: auto;
-    margin-right: auto;
+  .imgContainer {
+    width: 100%; /* Full width of the parent container */
+    max-width: 800px; /* Maximum width of the image container */
+    height: 300px; /* Fixed height */
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 1.2rem;
   }
-  .title{
-    font-size: 2.5rem;
-    line-height: 3.5rem;
+  
+  .post-img {
+    border-radius: 1.2rem;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
   }
 }
 @media screen and (min-width: 1281px) {
-  .imageContainer {
-    width: 100%; /* Fixed width for desktop */
-    height: auto; /* Fixed height for desktop */
-    padding-top: 50%; 
-    
+  .imgContainer {
+    width: 100%; /* Full width of the parent container */
+    max-width: 800px; /* Maximum width of the image container */
+    height: 300px; /* Fixed height */
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 1.2rem;
   }
-  .title{
-    font-size: 3rem;
-    line-height: 3.5rem;
-  }
-  .user{
-    margin-top: 6rem;
+  
+  .post-img {
+    border-radius: 1.2rem;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
   }
 }
 
 /* Mobile view */
 @media screen and (max-width: 1023px) {
+  .imgContainer {
+    width: 100%; /* Full width of the parent container */
+    max-width: 800px; /* Maximum width of the image container */
+    height: 300px; /* Fixed height */
+    position: relative;
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 1.2rem;
+  }
+  
+  .post-img {
+    border-radius: 1.2rem;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+  }
+}
+
+@media (max-width: 768px) {
+
   .imageContainer {
-    width: 100%;
-    height: auto;
-    /* Full width for mobile */
-     /* Adjust height automatically */
-    padding-top: 100%; 
-    
+    width: 100%; /* Ensure the container is full width */
+    max-width: 700px; /* Set a maximum width */
+    height: 200px; /* Set a fixed height for the image container */
+    position: relative;
+  }
+ 
+  .image {
+  
+    border-radius: 1.2rem;
+    width: 100%; /* Ensure image takes full width of its container */
+    height: auto; /* Ensure image takes full height of its container */
   }
 }

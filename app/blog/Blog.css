@@ -57,7 +57,7 @@
 
 .content{
   display: flex;
-  gap: 50px;
+  gap: 20px;
   width: 100%;
   margin: auto;
   overflow: hidden;
@@ -71,17 +71,17 @@
 }
 @media(min-width:576px){
   .content{
-    max-width: 540px;
+    max-width: 95%;
   }
 }
 @media(min-width:768px){
   .content{
-    max-width: 720px;
+    max-width: 95%;
   }
 }
 @media(min-width:992px){
   .content{
-    max-width: 960px;
+    max-width: 95%;
   }
 }
 @media(min-width:1200px){
@@ -89,7 +89,7 @@
     max-width: 1200px;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1023px) {
   .content{
     flex-direction: column;
   }

@@ -1,17 +1,21 @@
 // app/layout.js
 
 
+import Script from "next/script";
 import AuthProvider from "../src/providers/AuthProvider";
 import "./globals.css";
 import { Josefin_Sans } from "next/font/google";
 
+
+
+
 export const metadata = {
-  title: "Sarte Solution",
+  title: "Sarte Solution: Your Digital Transformation Partner",
   description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
-  keywords: "digital solutions, web development, IT solutions, digital marketing, emerging technologies, Sarte Solution",
+  keywords: "digital solutions, web development, IT solutions, digital marketing, emerging technologies, Sarte Solution, Generative AI, Top Tech Companies, Europe, Top Development Platform, Boost Your Business",
   author: "Sarte Solution Team",
   alternates: {
-    canonical: '/',
+    canonical: `${process.env.NEXTAUTH_URL}`,
     languages: {
       'en-US': '/en-US',
       'de-DE': '/de-DE',
@@ -23,10 +27,10 @@ export const metadata = {
     url: `${process.env.NEXTAUTH_URL}`,
     images: [
       {
-        url: '/og-image.png',
+        url: `/og-image.png`,
         width: 1200,
         height: 630,
-        alt: 'Sarte Solution Overview',
+        alt: 'Sarte Solution',
       },
     ],
   },
@@ -36,7 +40,24 @@ export const metadata = {
     description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
     image: "/og-image.png",
   },
+  robots: 'index, follow',
+  schema: {
+    "@context": "https://schema.org",
+    "@type": "DisgitalSolutions",
+    headline: "Sarte Solution",
+    description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
+    image: "/og-image.png",
+    author: {
+      "@type": "Organization",
+      name: "Sarte Solution",
+    },
+
+  },
 };
+
+
+
+
 
 const Josef = Josefin_Sans({
   subsets: ["latin"],
@@ -47,6 +68,7 @@ const Josef = Josefin_Sans({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -67,6 +89,17 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={Josef.className}>
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5822613719641434"
+     crossorigin="anonymous"></Script>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-170T4531W6"></Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-170T4531W6');
+          `}
+        </Script>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

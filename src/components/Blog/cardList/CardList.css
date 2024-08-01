@@ -1,19 +1,20 @@
 .card-wrapper{
     padding-top: 5rem;
     display: inline;
-    flex: 7;
+    flex: 5;
   }
   .card-container{
     display: flex;
     flex-direction: column; 
-    gap: 3rem;
-    justify-content: space-between;
+    gap: 2rem;
+    
   }
   .card{
-    flex: 6;
+
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    gap: 2rem;
 }
 
 

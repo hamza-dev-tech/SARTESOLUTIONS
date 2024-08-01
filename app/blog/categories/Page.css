@@ -1,6 +1,10 @@
 .app{
   position: relative;
   transition: all 300ms ease-out;
+  
+}
+.container{
+  width: 95%;
 }
 .tag{
   color: var(--secondary-color);

@@ -1,6 +1,6 @@
 export const HeroData = [
   {
-    src: "hero/person1.jpg",
+    src: "hero/person6.jpg",
     bg: "#0be4d1",
     delay: 0.1,
   },

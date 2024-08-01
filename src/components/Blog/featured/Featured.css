@@ -1,77 +1,125 @@
-.featured-wrapper{
-    padding-top: 1rem;
-  }
-  .featured-container{
-    display: flex;
-    flex-direction: column; 
-    gap: 1rem;
-    justify-content: space-between;
-    margin-top: 10rem;
-  }
-  .featured-head{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    max-width: 35rem;
-    margin: auto;
+.featured-wrapper {
+  padding-top: 1rem;
 }
-.title {
-    font-size: 96px;
-    font-weight: 300;
-  }
-  
-  .post {
-    margin-top: 60px;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-  }
-  
-  .imgContainer {
-    flex: 1;
-    height: 500px;
-    position: relative;
-  }
-  
-  .image {
-    object-fit: cover;
-  }
-  
-  .textContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%; /* Ensure it takes full width available */
-  }
-  
-  
-  .postTitle {
-    font-size: 2rem;
-    line-height: 2.5rem; /* Adjust line-height for better spacing */
-  }
-  
-  .postDesc {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--text-color);
-    line-height: 1.5rem;
-    max-width: 100%; /* Ensure it doesn't exceed container width */
-  }
-  
-  .button {
-    padding: 16px 20px;
-    border: none;
-    border-radius: 5px;
-    width: max-content;
-  }
-  .postTitle,
+
+.featured-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 1rem;
+  margin-top: 10rem;
+  max-width:800px ;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  max-width: 35rem;
+  margin: auto;
+}
+
+.imgContainer {
+  width: 100%; /* Full width of the parent container */
+  max-width: 800px; /* Maximum width of the image container */
+  height: 300px; /* Fixed height */
+  position: relative;
+  overflow: hidden; /* Hide any overflow */
+  border-radius: 1.2rem;
+}
+
+.post-img {
+  border-radius: 1.2rem;
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+.post {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%; /* Ensure it takes full width available */
+}
+
+.postTitle {
+  font-size: 2rem;
+  line-height: 2.5rem; /* Adjust line-height for better spacing */
+  text-align: left;
+  color: var(--secondary-color);
+}
+
 .postDesc {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-color);
+  line-height: 1.5rem;
+  max-width: 100%; /* Ensure it doesn't exceed container width */
 }
-  
+
+.button {
+  padding: 16px 20px;
+  border: none;
+  border-radius: 5px;
+  width: max-content;
+}
+
+.read-button {
+  width: 100px;
+  border: none;
+  padding: 16px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.title {
+  font-size: 2.6rem;
+  color: var(--title-color);
+  font-weight: bold;
+  text-align: center;
+  line-height: 3.5rem;
+  text-transform: capitalize;
+}
+
+.des {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  line-height: 2rem;
+}
+
+.sec-title {
+  font-size: 2rem;
+  color: var(--title-color);
+  font-weight: 600;
+  text-align: center;
+  line-height: 3rem;
+  text-transform: capitalize;
+}
+
+.text {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+}
+
+/* Responsive styles */
 @media screen and (max-width: 1280px) {
   .postTitle {
     font-size: 72px;
@@ -79,96 +127,57 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .postTitle  {
+  .postTitle {
     font-size: 64px;
   }
+}
 
-  .imgContainer {
-    display: none;
-  }
-}
-.read-button{
-  width: 100px;
-  border: none;
-  padding: 16px;
-  background-color: crimson;
-  color: white;
-  cursor: pointer;
-}
 @media screen and (max-width: 768px) {
-  .postTitle  {
+  .postTitle {
     font-size: 48px;
+  }
+
+  .sec-title {
+    font-size: 1.8rem;
+  }
+
+  .des {
+    font-size: 1.2rem;
   }
 }
 
 @media screen and (max-width: 640px) {
-  .postTitle  {
+  .postTitle {
     font-size: 36px;
+  }
+
+  .sec-title {
+    font-size: 1.6rem;
   }
 }
 
-  
-  @media screen and (max-width: 640px) {
-    .title {
-      font-size: 36px;
-    }
+@media screen and (max-width: 1280px) {
+
+  .post{
+    margin-left: auto;
+    margin-right: auto;
   }
-  .app{
-    position: relative;
-    transition: all 300ms ease-out;
-}
-.tag{
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.title{
-    font-size: 2.6rem;
-    color: var(--title-color);
-    font-weight: bold;
-    text-align: center;
-    line-height: 3.5rem;
-    text-transform: capitalize;
-}
-.des{
-    font-size: 1.4rem;
-    color: var(--text-color);
-    line-height: 2rem;
-}
-.sec-title{
-    font-size: 2rem;
-    color: var(--title-color);
-    font-weight: 600;
-    text-align: center;
-    line-height: 3rem;
-    text-transform: capitalize;
-}
-.text{
-    color: var(--text-color);
-    font-size: 1.1rem;
-    line-height: 1.8rem;
+
 }
 
 @media (max-width: 768px) {
-    .title{
-        font-size: 2.2rem;
-    }
-    .sec-title{
-        font-size: 1.8rem;
-    }
-    .des{
-        font-size: 1.2rem;
-    }
-}
-@media (max-width: 640px) {
-    .title{
-        font-size: 1.8rem;
-    }
-    .sec-title{
-        font-size: 1.6rem;
-    }
-   
-}
 
-
+  .imgContainer {
+    width: 100%; /* Ensure the container is full width */
+    max-width: 700px; /* Set a maximum width */
+    height: 200px; /* Set a fixed height for the image container */
+    position: relative;
+  }
+ 
+  .post-img {
   
+    border-radius: 1.2rem;
+    width: 100%; /* Ensure image takes full width of its container */
+    height: auto; /* Ensure image takes full height of its container */
+  }
+}

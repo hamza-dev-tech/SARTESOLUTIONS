@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 35px;
+  width: 100%;
 }
 
 .item {
@@ -23,7 +24,7 @@
   border: 3px solid lightgray;
   object-fit: cover;
   width: 80px;
-  height: 50px;
+  height: 80px;
 }
 
 .textContainer {
@@ -40,15 +41,14 @@
   color: white;
   width: max-content;
 }
-.views {
 
-  color: #333;
+.views {
+  color: var(--secondary-color);
   text-align: center;
   margin-left: 1rem;
 }
 
 .eyeIcon {
-
   margin-right: 5px;
 }
 
@@ -72,10 +72,6 @@
   background-color: #775aec;
 }
 
-
-
-
-
 .detail {
   font-size: 12px;
 }
@@ -83,7 +79,8 @@
 .date {
   color: gray;
 }
-.postTitle{
+
+.postTitle {
   font-size: 0.9rem;
   color: #867eb5;
   font-weight: bold;
@@ -91,24 +88,45 @@
   text-transform: capitalize;
 }
 
+@media (max-width: 1023px) {
+  .imageContainer {
+    width: 60px; /* Adjust the width for smaller screens */
+    position: relative;
+  }
 
-@media (max-width: 768px) {
-  .title{
-      font-size: 2.2rem;
-  }
-  .sec-title{
-      font-size: 1.8rem;
-  }
-  .des{
-      font-size: 1.2rem;
+  .image {
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    object-fit: cover;
+    width: 60px; /* Adjust the width for smaller screens */
+    height: 60px; /* Adjust the height for smaller screens */
   }
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .sec-title {
+    font-size: 1.8rem;
+  }
+  .des {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 640px) {
-  .title{
-      font-size: 1.8rem;
+  .title {
+    font-size: 1.8rem;
   }
-  .sec-title{
-      font-size: 1.6rem;
+  .sec-title {
+    font-size: 1.6rem;
   }
- 
+  .imageContainer {
+    width: 50px; /* Further adjust the width for very small screens */
+  }
+  .image {
+    width: 50px; /* Further adjust the width for very small screens */
+    height: 50px; /* Further adjust the height for very small screens */
+  }
 }

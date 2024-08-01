@@ -21,11 +21,17 @@ const Card = ({ item, key }) => {
       <div className={styles.cardTextContainer}>
         <div className={styles.cardDetail}>
           <span className={styles.date}>
-            {item.createdAt.substring(0, 10)} -{" "}
+            {item.createdAt.substring(0, 10)}
           </span>
-          <span className={styles.cardcategory}>{item.catSlug}</span>
+          <span>-</span>
+     
+          <span className={`${styles.category} ${styles[item.catSlug]}`}>{item.catSlug}</span>
           <span className={styles.views}>
-            <FaEye className={styles.eyeIcon} /> {item.views}
+            <FaEye className={styles.eyeIcon} />
+            <span>
+              
+               {item.views}
+              </span>
           </span>
         </div>
         <Link href={`/blog/posts/${item.slug}`}>
@@ -36,6 +42,7 @@ const Card = ({ item, key }) => {
           Read More
         </Link>
       </div>
+      <hr style={{width:'95%', border:'1px solid var(--secondary-color)', opacity:0.2, marginTop:'2rem', width:'20rem', textAlign:'center'}}></hr>
     </div>
   );
 };
