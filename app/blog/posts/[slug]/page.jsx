@@ -7,6 +7,77 @@ import Footer from "@/src/components/Footer/Footer";
 import Keyword from "@/src/components/Blog/keyword/Keyword";
 import { FaEye } from "react-icons/fa";
 
+
+
+
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+  const data = await getData(slug);
+
+  if (!data) {
+    return notFound();
+  }
+
+  // Fetch keywords
+  const keywordsData = await fetch(
+    `${process.env.NEXTAUTH_URL}/api/keywords?postSlug=${slug}`
+  ).then((res) => res.json());
+  const keywords = keywordsData.keywords.map((item) => item.keyword);
+
+  const description = data.postDesc?.substring(0, 160);
+  const title = `${data.title} - Sarte Solutions Blog`;
+  
+  // Ensure the title length is between 30-60 characters
+  const optimizedTitle = title.length > 60 ? title.substring(0, 57) + "..." : title;
+
+  return {
+    title: optimizedTitle,
+    description,
+    keywords: keywords.join(", "),
+    alternates: {
+      canonical: `${process.env.NEXTAUTH_URL}/posts/${data.slug}`,
+      languages: {
+        "en-US": `${process.env.NEXTAUTH_URL}/posts/${data.slug}`,
+      },
+    },
+    openGraph: {
+      type: "article",
+      title: optimizedTitle,
+      description,
+      url: `${process.env.NEXTAUTH_URL}/posts/${data.slug}`,
+      images: [
+        {
+          url: data.img || "/default-image.png",
+          width: 1200,
+          height: 630,
+          alt: data.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: optimizedTitle,
+      description,
+      image: data.img || "/default-image.png",
+    },
+    robots: 'index, follow',
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: data.title,
+      description,
+      image: data.img || "/default-image.png",
+      author: {
+        "@type": "Person",
+        name: data.user?.name,
+      },
+      datePublished: data.createdAt,
+    },
+  };
+}
+
+
+
 const getData = async (slug) => {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${slug}`, {
     cache: "no-store",
@@ -23,6 +94,9 @@ const SinglePage = async ({ params }) => {
   const { slug } = params;
 
   const data = await getData(slug);
+
+
+  
 
   return (
     <>
@@ -66,7 +140,7 @@ const SinglePage = async ({ params }) => {
               <div className={styles.post}>
                 <div
                   className={styles.description}
-                  dangerouslySetInnerHTML={{ __html: data?.desc }}
+                  
                 />
                 <div className={styles.comment}>
                   <Comments postSlug={slug} />

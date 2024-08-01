@@ -1,13 +1,41 @@
-import AuthProvider from "@/src/providers/AuthProvider";
+// app/layout.js
+
+
+import AuthProvider from "../src/providers/AuthProvider";
 import "./globals.css";
 import { Josefin_Sans } from "next/font/google";
 
 export const metadata = {
-  title: {
-    default: "Sarte Solution",
-    template: "%s - My Blog" 
+  title: "Sarte Solution",
+  description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
+  keywords: "digital solutions, web development, IT solutions, digital marketing, emerging technologies, Sarte Solution",
+  author: "Sarte Solution Team",
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US',
+      'de-DE': '/de-DE',
+    },
   },
-  description: "Sarte Solution, established by Hamza Shabbir in Pakistan, provides a wide array of digital services to enhance business operations. Specializing in digital marketing, web development, IT solutions, creative services, emerging technologies, and education and training, Sarte Solution offers tailored solutions to meet the unique needs of organizations. From SEO and content marketing to custom website design, cloud services, AI, and corporate training, Sarte Solution empowers businesses to thrive in the digital age.",
+  openGraph: {
+    title: "Sarte Solution",
+    description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
+    url: `${process.env.NEXTAUTH_URL}`,
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sarte Solution Overview',
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sarte Solution",
+    description: "Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age.",
+    image: "/og-image.png",
+  },
 };
 
 const Josef = Josefin_Sans({
@@ -20,6 +48,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Sarte Solution offers cutting-edge digital solutions, including web development, IT infrastructure, digital marketing, and emerging technologies to help your business thrive in the digital age." />
+        <meta name="keywords" content="digital solutions, web development, IT solutions, digital marketing, emerging technologies, Sarte Solution" />
+        <meta name="author" content="Sarte Solution Team" />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"

@@ -79,12 +79,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Ensure positioning is correct for aspect ratio */
+  width: 90%;
 }
+/* Aspect ratio container for thumbnail */
+/*  */
 
 .thumbnail {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Cover ensures the image covers the container */
+  border-radius: 5px; /* Optional: rounded corners */
 }
 
 .select {
@@ -212,3 +218,6 @@
   font-size: 14px;
   color: #1a8917;
 }
+
+
+

@@ -1,4 +1,4 @@
-import Navbar from '@/src/components/Navbar/Navbar'
+
 import React from 'react'
 
 import "./Blog.css"
@@ -7,6 +7,7 @@ import Featured from '@/src/components/Blog/featured/Featured'
 import CategoryList from '@/src/components/Blog/categoryList/CategoryList'
 import CardList from '@/src/components/Blog/cardList/CardList'
 import Menu from '@/src/components/Blog/Menu/Menu'
+import Navbar from '../../src/components/Navbar/Navbar'
 
 
 const Blogs = ({ searchParams }) => {

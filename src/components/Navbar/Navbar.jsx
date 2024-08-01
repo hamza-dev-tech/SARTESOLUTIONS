@@ -55,7 +55,7 @@ const Navbar = () => {
           {/* Right Side */}
           <div className="n-right">
             <div className="n-menu">
-              <a style={{ color: color, textDecoration: 'none' }} href="/"><span>Home</span></a>
+              <a style={{ color: color, textDecoration: 'none' }}  href="/"><span>Home</span></a>
               <a style={{ color: color, textDecoration: 'none' }} href="/services">Services</a>
               <a style={{ color: color, textDecoration: 'none' }} href="/about">About</a>
               <a style={{ color: color, textDecoration: 'none' }} href="/blog">Blog</a>

@@ -1,18 +1,19 @@
 
-
-import Navbar from "@/src/components/Navbar/Navbar";
 import "./page.css";
-import Hero from "@/src/components/Hero/Hero";
-import BrandingVideo from "@/src/components/BrandingVideo/BrandingVideo";
-import Services from "@/src/components/ServicesPanel/Services";
 
 
-import OurDiff from "@/src/components/OurDiff/OurDiff";
 
-import HowItWorks from "@/src/components/HowItWorks/HowItWorks";
-import Testemonials from "@/src/components/Testimonials/Testemonials";
-import Footer from "@/src/components/Footer/Footer";
-import Projects from "@/src/components/Projects/Projects";
+
+
+import Navbar from "../src/components/Navbar/Navbar";
+import Hero from "../src/components/Hero/Hero";
+import BrandingVideo from "../src/components/BrandingVideo/BrandingVideo";
+import Services from "../src/components/ServicesPanel/Services";
+import OurDiff from "../src/components/OurDiff/OurDiff";
+import Projects from "../src/components/Projects/Projects";
+import HowItWorks from "../src/components/HowItWorks/HowItWorks";
+import Footer from "../src/components/Footer/Footer";
+import Testemonials from "../src/components/Testimonials/Testemonials";
 
 export default function Home() {
  
